@@ -1038,7 +1038,7 @@ class _VideoInfoState extends State<VideoInfo> with TickerProviderStateMixin {
                           : '评论',
                     ),
             ),
-            Obx(
+            Obx((
               () => isTVMode
                   ? TVActionItem(
                       id: actionIds[5],
