@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -14,12 +16,16 @@ class TVPlayerControlsExtension {
   FocusNode? _playerFocusNode;
   bool _isControlsVisible = false;
   Timer? _controlsVisibilityTimer;
+  BuildContext? context;
   
   TVPlayerControlsExtension(this.controller);
   
   /// 设置TV控制
   void setupTVControls(BuildContext context) {
     if (!TVModeDetector().isTVMode.value) return;
+    
+    // 保存上下文以便后续使用
+    this.context = context;
     
     // 创建一个焦点节点专门用于视频播放器
     _playerFocusNode = FocusNode(debugLabel: 'VideoPlayer');
@@ -60,7 +66,7 @@ class TVPlayerControlsExtension {
     if (event.logicalKey == LogicalKeyboardKey.select || 
         event.logicalKey == LogicalKeyboardKey.enter ||
         event.logicalKey == LogicalKeyboardKey.space) {
-      if (controller.isPlaying.value) {
+      if (controller.playerStatus.status.value == PlayerStatus.playing) {
         controller.pause();
       } else {
         controller.play();
@@ -92,18 +98,56 @@ class TVPlayerControlsExtension {
     }
     
     // 全屏切换
-    else if (event.logicalKey == LogicalKeyboardKey.keyF) {
-      controller.toggleFullScreen();
+    else if (event.logicalKey == LogicalKeyboardKey.keyF && context != null) {
+      controller.toggleFullScreen(!controller.isFullScreen.value);
     }
     
     // 下一集
     else if (event.logicalKey == LogicalKeyboardKey.keyN) {
-      controller.playNext();
+      // 检查是否有下一集方法
+      try {
+        // 尝试使用视频详情控制器的方法
+        final videoDetailCtr = Get.find<dynamic>(tag: 'videoDetail');
+        if (videoDetailCtr != null) {
+          final videoIntroController = videoDetailCtr.videoIntroController;
+          if (videoIntroController != null && videoIntroController.nextPlay != null) {
+            videoIntroController.nextPlay();
+            return;
+          }
+          
+          final bangumiIntroController = videoDetailCtr.bangumiIntroController;
+          if (bangumiIntroController != null && bangumiIntroController.nextPlay != null) {
+            bangumiIntroController.nextPlay();
+            return;
+          }
+        }
+      } catch (e) {
+        print('Next video method not available: $e');
+      }
     }
     
     // 上一集
     else if (event.logicalKey == LogicalKeyboardKey.keyP) {
-      controller.playPrevious();
+      // 检查是否有上一集方法
+      try {
+        // 尝试使用视频详情控制器的方法
+        final videoDetailCtr = Get.find<dynamic>(tag: 'videoDetail');
+        if (videoDetailCtr != null) {
+          final videoIntroController = videoDetailCtr.videoIntroController;
+          if (videoIntroController != null && videoIntroController.prevPlay != null) {
+            videoIntroController.prevPlay();
+            return;
+          }
+          
+          final bangumiIntroController = videoDetailCtr.bangumiIntroController;
+          if (bangumiIntroController != null && bangumiIntroController.prevPlay != null) {
+            bangumiIntroController.prevPlay();
+            return;
+          }
+        }
+      } catch (e) {
+        print('Previous video method not available: $e');
+      }
     }
   }
   
@@ -122,14 +166,15 @@ class TVPlayerControlsExtension {
   /// 显示控制UI
   void _showControls() {
     _isControlsVisible = true;
-    controller.showControls();
+    controller.showControls(true);
     
     // 设置定时器，自动隐藏控制UI
     _controlsVisibilityTimer?.cancel();
     _controlsVisibilityTimer = Timer(const Duration(seconds: 5), () {
       if (_isControlsVisible) {
         _isControlsVisible = false;
-        controller.hideControls();
+        // 使用可用的方法隐藏控制
+        controller.showControls(false);
       }
     });
   }
