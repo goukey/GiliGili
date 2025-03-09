@@ -1038,8 +1038,7 @@ class _VideoInfoState extends State<VideoInfo> with TickerProviderStateMixin {
                           : '评论',
                     ),
             ),
-            Obx((
-              () => isTVMode
+            Obx(() => isTVMode
                   ? TVActionItem(
                       id: actionIds[5],
                       icon: const Icon(FontAwesomeIcons.shareFromSquare),
@@ -1061,7 +1060,7 @@ class _VideoInfoState extends State<VideoInfo> with TickerProviderStateMixin {
                       text: !widget.loadingStatus
                           ? Utils.numFormat(videoDetail.stat!.share!)
                           : '分享',
-                    ),
+                    )),
           ],
         ),
       );
