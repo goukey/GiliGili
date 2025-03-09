@@ -13,6 +13,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../../http/init.dart';
 
@@ -89,6 +90,12 @@ class _SettingPageState extends State<SettingPage> {
       title: '关于',
       icon: Icons.info_outline,
     ),
+    _SettingsModel(
+      name: 'tvModeSetting',
+      title: 'TV模式设置',
+      subtitle: '配置TV模式和遥控器支持',
+      icon: MdiIcons.television,
+    ),
   ];
 
   @override
@@ -105,6 +112,7 @@ class _SettingPageState extends State<SettingPage> {
                 'styleSetting' => '外观设置',
                 'extraSetting' => '其它设置',
                 'about' => '关于',
+                'tvModeSetting' => 'TV模式设置',
                 _ => '设置',
               }),
       ),
@@ -128,6 +136,7 @@ class _SettingPageState extends State<SettingPage> {
                     'styleSetting' => StyleSetting(showAppBar: false),
                     'extraSetting' => ExtraSetting(showAppBar: false),
                     'about' => AboutPage(showAppBar: false),
+                    'tvModeSetting' => const SizedBox.shrink(),
                     _ => const SizedBox.shrink(),
                   },
                 )

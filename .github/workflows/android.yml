@@ -1,6 +1,14 @@
 name: Android Release
 
 on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+      - '.github/ISSUE_TEMPLATE/**'
+      - 'LICENSE'
+      - '.gitignore'
   workflow_dispatch:
 
 jobs:

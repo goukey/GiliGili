@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:PiliPlus/build_config.dart';
 import 'package:PiliPlus/pages/video/detail/view_v.dart';
 import 'package:PiliPlus/utils/cache_manage.dart';
+import 'package:PiliPlus/utils/tv_mode_detector.dart';
 import 'package:PiliPlus/utils/utils.dart';
 import 'package:flex_seed_scheme/flex_seed_scheme.dart';
 import 'package:flutter/services.dart';
@@ -32,27 +33,36 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MediaKit.ensureInitialized();
   await GStorage.init();
+  
+  // 初始化TV模式检测
+  final tvDetector = TVModeDetector();
+  await tvDetector.initialize();
+  
   if (GStorage.setting.get(SettingBoxKey.autoClearCache, defaultValue: false)) {
     await CacheManage.clearLibraryCache();
   }
-  if (GStorage.setting
-      .get(SettingBoxKey.horizontalScreen, defaultValue: false)) {
-    await SystemChrome.setPreferredOrientations(
-      //支持竖屏与横屏
-      [
-        DeviceOrientation.portraitUp,
-        // DeviceOrientation.portraitDown,
-        DeviceOrientation.landscapeLeft,
-        DeviceOrientation.landscapeRight,
-      ],
-    );
-  } else {
-    await SystemChrome.setPreferredOrientations(
-      //支持竖屏
-      [
-        DeviceOrientation.portraitUp,
-      ],
-    );
+  
+  // 如果不是TV模式，则使用原有的屏幕方向设置逻辑
+  if (!tvDetector.isTVMode.value) {
+    if (GStorage.setting
+        .get(SettingBoxKey.horizontalScreen, defaultValue: false)) {
+      await SystemChrome.setPreferredOrientations(
+        //支持竖屏与横屏
+        [
+          DeviceOrientation.portraitUp,
+          // DeviceOrientation.portraitDown,
+          DeviceOrientation.landscapeLeft,
+          DeviceOrientation.landscapeRight,
+        ],
+      );
+    } else {
+      await SystemChrome.setPreferredOrientations(
+        //支持竖屏
+        [
+          DeviceOrientation.portraitUp,
+        ],
+      );
+    }
   }
   HttpOverrides.global = _CustomHttpOverrides();
   await setupServiceLocator();

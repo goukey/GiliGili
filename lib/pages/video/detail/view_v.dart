@@ -54,6 +54,10 @@ import 'package:screen_brightness/screen_brightness.dart';
 import '../../../services/shutdown_timer_service.dart';
 import 'widgets/header_control.dart';
 import 'package:PiliPlus/common/widgets/spring_physics.dart';
+import 'package:PiliPlus/common/widgets/focusable.dart';
+import 'package:PiliPlus/plugin/pl_player/tv_controls_extension.dart';
+import 'package:PiliPlus/services/remote_navigation_service.dart';
+import 'package:PiliPlus/utils/tv_mode_detector.dart';
 
 class VideoDetailPageV extends StatefulWidget {
   const VideoDetailPageV({super.key});
@@ -113,6 +117,9 @@ class _VideoDetailPageVState extends State<VideoDetailPageV>
   final GlobalKey relatedVideoPanelKey = GlobalKey();
   final GlobalKey videoPlayerKey = GlobalKey();
   final GlobalKey videoReplyPanelKey = GlobalKey();
+
+  TVPlayerControlsExtension? _tvPlayerControlsExtension;
+  bool get isTVMode => TVModeDetector().isTVMode.value;
 
   @override
   void initState() {
@@ -203,6 +210,14 @@ class _VideoDetailPageVState extends State<VideoDetailPageV>
     });
 
     WidgetsBinding.instance.addObserver(this);
+
+    // 如果是TV模式，设置导航关系
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (isTVMode && plPlayerController != null) {
+        _tvPlayerControlsExtension = TVPlayerControlsExtension(plPlayerController!);
+        _tvPlayerControlsExtension!.setupTVControls(context);
+      }
+    });
   }
 
   // 获取视频资源，初始化播放器
@@ -422,6 +437,10 @@ class _VideoDetailPageVState extends State<VideoDetailPageV>
     // _lifecycleListener.dispose();
     showStatusBar();
     // _animationController.dispose();
+
+    // 清理TV模式资源
+    _tvPlayerControlsExtension?.dispose();
+    
     super.dispose();
   }
 
@@ -2375,5 +2394,16 @@ class _VideoDetailPageVState extends State<VideoDetailPageV>
         );
       },
     );
+  }
+
+  // 修改构建操作按钮的方法，添加Focusable包装
+  Widget _buildActionButton(String id, Widget button, VoidCallback onTap) {
+    return isTVMode
+        ? Focusable(
+            id: id,
+            onSelect: onTap,
+            child: button,
+          )
+        : button;
   }
 }

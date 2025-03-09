@@ -683,7 +683,11 @@ class SettingBoxKey {
 
       // 代理host port
       systemProxyHost = 'systemProxyHost',
-      systemProxyPort = 'systemProxyPort';
+      systemProxyPort = 'systemProxyPort',
+
+      // TV模式相关设置
+      enableTVMode = 'enableTVMode',
+      autoDetectTVMode = 'autoDetectTVMode';
 
   /// 外观
   static const String themeMode = 'themeMode',

@@ -11,9 +11,12 @@ import android.os.Build
 import android.os.Bundle
 import android.view.WindowManager.LayoutParams
 import kotlin.system.exitProcess
+import android.app.UiModeManager
+import android.content.Context
 
 class MainActivity : AudioServiceActivity() {
     private lateinit var methodChannel: MethodChannel
+    private val CHANNEL = "com.gili.tv_detector"
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
@@ -55,6 +58,8 @@ class MainActivity : AudioServiceActivity() {
                     }
                     startActivity(intent)
                 } catch (e: Exception) {}
+            } else if (call.method == "isTVDevice") {
+                result.success(isTVDevice())
             } else {
                 result.notImplemented()
             }
@@ -67,6 +72,11 @@ class MainActivity : AudioServiceActivity() {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK
         }
         startActivity(intent)
+    }
+
+    private fun isTVDevice(): Boolean {
+        val uiModeManager = context.getSystemService(Context.UI_MODE_SERVICE) as UiModeManager
+        return uiModeManager.currentModeType == Configuration.UI_MODE_TYPE_TELEVISION
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

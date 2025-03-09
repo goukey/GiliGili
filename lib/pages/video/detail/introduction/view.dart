@@ -25,6 +25,8 @@ import 'package:PiliPlus/utils/feed_back.dart';
 import 'package:PiliPlus/utils/storage.dart';
 import 'package:PiliPlus/utils/utils.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:PiliPlus/pages/video/detail/introduction/widgets/tv_action_item.dart';
+import 'package:PiliPlus/utils/tv_mode_detector.dart';
 
 import 'widgets/action_item.dart';
 import 'widgets/action_row_item.dart';
@@ -840,6 +842,25 @@ class _VideoInfoState extends State<VideoInfo> with TickerProviderStateMixin {
 
   Widget actionGrid(
       BuildContext context, VideoIntroController videoIntroController) {
+    final bool isTVMode = TVModeDetector().isTVMode.value;
+    
+    // 定义操作按钮ID列表，用于TV模式下的导航
+    final List<String> actionIds = [
+      'like_button',
+      'dislike_button',
+      'coin_button',
+      'fav_button',
+      'comment_button',
+      'share_button',
+    ];
+    
+    // 如果是TV模式，注册操作按钮之间的导航关系
+    if (isTVMode) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        TVActionItem.registerActionItemsNavigation(actionIds);
+      });
+    }
+    
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
       return Container(
@@ -849,105 +870,198 @@ class _VideoInfoState extends State<VideoInfo> with TickerProviderStateMixin {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Obx(
-              () => ActionItem(
-                icon: const Icon(FontAwesomeIcons.thumbsUp),
-                selectIcon: const Icon(FontAwesomeIcons.solidThumbsUp),
-                onTap: () => handleState(videoIntroController.actionLikeVideo),
-                onLongPress: () =>
-                    handleState(videoIntroController.actionOneThree),
-                selectStatus: videoIntroController.hasLike.value,
-                loadingStatus: widget.loadingStatus,
-                semanticsLabel: '点赞',
-                text: !widget.loadingStatus
-                    ? Utils.numFormat(videoDetail.stat!.like!)
-                    : '-',
-                needAnim: true,
-                hasTriple: videoIntroController.hasLike.value &&
-                    videoIntroController.hasCoin.value &&
-                    videoIntroController.hasFav.value,
-                callBack: (start) {
-                  if (start) {
-                    HapticFeedback.lightImpact();
-                    _coinKey.currentState?.controller?.forward();
-                    _favKey.currentState?.controller?.forward();
-                  } else {
-                    _coinKey.currentState?.controller?.reverse();
-                    _favKey.currentState?.controller?.reverse();
-                  }
-                },
-              ),
+              () => isTVMode
+                  ? TVActionItem(
+                      id: actionIds[0],
+                      icon: const Icon(FontAwesomeIcons.thumbsUp),
+                      selectIcon: const Icon(FontAwesomeIcons.solidThumbsUp),
+                      onTap: () => handleState(videoIntroController.actionLikeVideo),
+                      onLongPress: () =>
+                          handleState(videoIntroController.actionOneThree),
+                      selectStatus: videoIntroController.hasLike.value,
+                      loadingStatus: widget.loadingStatus,
+                      semanticsLabel: '点赞',
+                      text: !widget.loadingStatus
+                          ? Utils.numFormat(videoDetail.stat!.like!)
+                          : '-',
+                      needAnim: true,
+                      hasTriple: videoIntroController.hasLike.value &&
+                          videoIntroController.hasCoin.value &&
+                          videoIntroController.hasFav.value,
+                      callBack: (start) {
+                        if (start) {
+                          HapticFeedback.lightImpact();
+                          _coinKey.currentState?.controller?.forward();
+                          _favKey.currentState?.controller?.forward();
+                        } else {
+                          _coinKey.currentState?.controller?.reverse();
+                          _favKey.currentState?.controller?.reverse();
+                        }
+                      },
+                    )
+                  : ActionItem(
+                      icon: const Icon(FontAwesomeIcons.thumbsUp),
+                      selectIcon: const Icon(FontAwesomeIcons.solidThumbsUp),
+                      onTap: () => handleState(videoIntroController.actionLikeVideo),
+                      onLongPress: () =>
+                          handleState(videoIntroController.actionOneThree),
+                      selectStatus: videoIntroController.hasLike.value,
+                      loadingStatus: widget.loadingStatus,
+                      semanticsLabel: '点赞',
+                      text: !widget.loadingStatus
+                          ? Utils.numFormat(videoDetail.stat!.like!)
+                          : '-',
+                      needAnim: true,
+                      hasTriple: videoIntroController.hasLike.value &&
+                          videoIntroController.hasCoin.value &&
+                          videoIntroController.hasFav.value,
+                      callBack: (start) {
+                        if (start) {
+                          HapticFeedback.lightImpact();
+                          _coinKey.currentState?.controller?.forward();
+                          _favKey.currentState?.controller?.forward();
+                        } else {
+                          _coinKey.currentState?.controller?.reverse();
+                          _favKey.currentState?.controller?.reverse();
+                        }
+                      },
+                    ),
             ),
             Obx(
-              () => ActionItem(
-                icon: const Icon(FontAwesomeIcons.thumbsDown),
-                selectIcon: const Icon(FontAwesomeIcons.solidThumbsDown),
-                onTap: () =>
-                    handleState(videoIntroController.actionDislikeVideo),
-                selectStatus: videoIntroController.hasDislike.value,
-                loadingStatus: widget.loadingStatus,
-                semanticsLabel: '点踩',
-                text: "点踩",
-              ),
-            ),
-            // ActionItem(
-            //     icon: const Icon(FontAwesomeIcons.clock),
-            //     onTap: () => videoIntroController.actionShareVideo(),
-            //     selectStatus: false,
-            //     loadingStatus: loadingStatus,
-            //     text: '稍后再看'),
-            Obx(
-              () => ActionItem(
-                key: _coinKey,
-                icon: const Icon(FontAwesomeIcons.b),
-                selectIcon: const Icon(FontAwesomeIcons.b),
-                onTap: () => handleState(videoIntroController.actionCoinVideo),
-                selectStatus: videoIntroController.hasCoin.value,
-                loadingStatus: widget.loadingStatus,
-                semanticsLabel: '投币',
-                text: !widget.loadingStatus
-                    ? Utils.numFormat(videoDetail.stat!.coin!)
-                    : '-',
-                needAnim: true,
-              ),
+              () => isTVMode
+                  ? TVActionItem(
+                      id: actionIds[1],
+                      icon: const Icon(FontAwesomeIcons.thumbsDown),
+                      selectIcon: const Icon(FontAwesomeIcons.solidThumbsDown),
+                      onTap: () =>
+                          handleState(videoIntroController.actionDislikeVideo),
+                      selectStatus: videoIntroController.hasDislike.value,
+                      loadingStatus: widget.loadingStatus,
+                      semanticsLabel: '点踩',
+                      text: "点踩",
+                    )
+                  : ActionItem(
+                      icon: const Icon(FontAwesomeIcons.thumbsDown),
+                      selectIcon: const Icon(FontAwesomeIcons.solidThumbsDown),
+                      onTap: () =>
+                          handleState(videoIntroController.actionDislikeVideo),
+                      selectStatus: videoIntroController.hasDislike.value,
+                      loadingStatus: widget.loadingStatus,
+                      semanticsLabel: '点踩',
+                      text: "点踩",
+                    ),
             ),
             Obx(
-              () => ActionItem(
-                key: _favKey,
-                icon: const Icon(FontAwesomeIcons.star),
-                selectIcon: const Icon(FontAwesomeIcons.solidStar),
-                onTap: () => videoIntroController.showFavBottomSheet(context),
-                onLongPress: () => videoIntroController
-                    .showFavBottomSheet(context, type: 'longPress'),
-                selectStatus: videoIntroController.hasFav.value,
-                loadingStatus: widget.loadingStatus,
-                semanticsLabel: '收藏',
-                text: !widget.loadingStatus
-                    ? Utils.numFormat(videoDetail.stat!.favorite!)
-                    : '-',
-                needAnim: true,
-              ),
+              () => isTVMode
+                  ? TVActionItem(
+                      id: actionIds[2],
+                      icon: const Icon(FontAwesomeIcons.b),
+                      selectIcon: const Icon(FontAwesomeIcons.b),
+                      onTap: () => handleState(videoIntroController.actionCoinVideo),
+                      selectStatus: videoIntroController.hasCoin.value,
+                      loadingStatus: widget.loadingStatus,
+                      semanticsLabel: '投币',
+                      text: !widget.loadingStatus
+                          ? Utils.numFormat(videoDetail.stat!.coin!)
+                          : '-',
+                      needAnim: true,
+                    )
+                  : ActionItem(
+                      icon: const Icon(FontAwesomeIcons.b),
+                      selectIcon: const Icon(FontAwesomeIcons.b),
+                      onTap: () => handleState(videoIntroController.actionCoinVideo),
+                      selectStatus: videoIntroController.hasCoin.value,
+                      loadingStatus: widget.loadingStatus,
+                      semanticsLabel: '投币',
+                      text: !widget.loadingStatus
+                          ? Utils.numFormat(videoDetail.stat!.coin!)
+                          : '-',
+                      needAnim: true,
+                    ),
             ),
-            ActionItem(
-              icon: const Icon(FontAwesomeIcons.comment),
-              onTap: () => videoDetailCtr.tabCtr
-                  .animateTo(videoDetailCtr.tabCtr.index == 1 ? 0 : 1),
-              selectStatus: false,
-              loadingStatus: widget.loadingStatus,
-              semanticsLabel: '评论',
-              text: !widget.loadingStatus
-                  ? Utils.numFormat(videoDetail.stat!.reply!)
-                  : '评论',
+            Obx(
+              () => isTVMode
+                  ? TVActionItem(
+                      id: actionIds[3],
+                      icon: const Icon(FontAwesomeIcons.star),
+                      selectIcon: const Icon(FontAwesomeIcons.solidStar),
+                      onTap: () => videoIntroController.showFavBottomSheet(context),
+                      onLongPress: () => videoIntroController
+                          .showFavBottomSheet(context, type: 'longPress'),
+                      selectStatus: videoIntroController.hasFav.value,
+                      loadingStatus: widget.loadingStatus,
+                      semanticsLabel: '收藏',
+                      text: !widget.loadingStatus
+                          ? Utils.numFormat(videoDetail.stat!.favorite!)
+                          : '-',
+                      needAnim: true,
+                    )
+                  : ActionItem(
+                      icon: const Icon(FontAwesomeIcons.star),
+                      selectIcon: const Icon(FontAwesomeIcons.solidStar),
+                      onTap: () => videoIntroController.showFavBottomSheet(context),
+                      onLongPress: () => videoIntroController.showFavBottomSheet(context,
+                          type: 'longPress'),
+                      selectStatus: videoIntroController.hasFav.value,
+                      loadingStatus: widget.loadingStatus,
+                      semanticsLabel: '收藏',
+                      text: !widget.loadingStatus
+                          ? Utils.numFormat(videoDetail.stat!.favorite!)
+                          : '-',
+                      needAnim: true,
+                    ),
             ),
-            ActionItem(
-              icon: const Icon(FontAwesomeIcons.shareFromSquare),
-              onTap: () => videoIntroController.actionShareVideo(),
-              selectStatus: false,
-              loadingStatus: widget.loadingStatus,
-              semanticsLabel: '分享',
-              text: !widget.loadingStatus
-                  ? Utils.numFormat(videoDetail.stat!.share!)
-                  : '分享',
+            Obx(
+              () => isTVMode
+                  ? TVActionItem(
+                      id: actionIds[4],
+                      icon: const Icon(FontAwesomeIcons.comment),
+                      selectIcon: const Icon(FontAwesomeIcons.comment),
+                      onTap: () => videoDetailCtr.tabCtr
+                          .animateTo(videoDetailCtr.tabCtr.index == 1 ? 0 : 1),
+                      selectStatus: false,
+                      loadingStatus: widget.loadingStatus,
+                      semanticsLabel: '评论',
+                      text: !widget.loadingStatus
+                          ? Utils.numFormat(videoDetail.stat!.reply!)
+                          : '评论',
+                    )
+                  : ActionItem(
+                      icon: const Icon(FontAwesomeIcons.comment),
+                      onTap: () => videoDetailCtr.tabCtr
+                          .animateTo(videoDetailCtr.tabCtr.index == 1 ? 0 : 1),
+                      selectStatus: false,
+                      loadingStatus: widget.loadingStatus,
+                      semanticsLabel: '评论',
+                      text: !widget.loadingStatus
+                          ? Utils.numFormat(videoDetail.stat!.reply!)
+                          : '评论',
+                    ),
             ),
+            Obx(
+              () => isTVMode
+                  ? TVActionItem(
+                      id: actionIds[5],
+                      icon: const Icon(FontAwesomeIcons.shareFromSquare),
+                      selectIcon: const Icon(FontAwesomeIcons.shareFromSquare),
+                      onTap: () => videoIntroController.actionShareVideo(),
+                      selectStatus: false,
+                      loadingStatus: widget.loadingStatus,
+                      semanticsLabel: '分享',
+                      text: !widget.loadingStatus
+                          ? Utils.numFormat(videoDetail.stat!.share!)
+                          : '分享',
+                    )
+                  : ActionItem(
+                      icon: const Icon(FontAwesomeIcons.shareFromSquare),
+                      onTap: () => videoIntroController.actionShareVideo(),
+                      selectStatus: false,
+                      loadingStatus: widget.loadingStatus,
+                      semanticsLabel: '分享',
+                      text: !widget.loadingStatus
+                          ? Utils.numFormat(videoDetail.stat!.share!)
+                          : '分享',
+                    ),
           ],
         ),
       );

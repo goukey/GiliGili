@@ -55,6 +55,7 @@ import '../pages/subscription_detail/index.dart';
 import '../pages/video/detail/index.dart';
 import '../pages/whisper/index.dart';
 import '../pages/whisper_detail/index.dart';
+import '../pages/setting/tv_mode_setting.dart';
 
 class Routes {
   static final List<GetPage<dynamic>> getPages = [
@@ -176,6 +177,8 @@ class Routes {
         name: '/navbarSetting', page: () => const NavigationBarSetPage()),
     CustomGetPage(
         name: '/settingsSearch', page: () => const SettingsSearchPage()),
+    // TV模式设置
+    CustomGetPage(name: '/tvModeSetting', page: () => const TVModeSetting()),
   ];
 }
 
