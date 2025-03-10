@@ -7,7 +7,12 @@ import 'package:PiliPlus/utils/tv_mode_detector.dart';
 /// TV模式设置页面
 /// 允许用户启用或禁用TV模式
 class TVModeSetting extends StatefulWidget {
-  const TVModeSetting({Key? key}) : super(key: key);
+  const TVModeSetting({
+    Key? key,
+    this.showAppBar = true,
+  }) : super(key: key);
+
+  final bool showAppBar;
 
   @override
   State<TVModeSetting> createState() => _TVModeSettingState();
@@ -52,10 +57,10 @@ class _TVModeSettingState extends State<TVModeSetting> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: widget.showAppBar ? AppBar(
         title: const Text('TV模式设置'),
         centerTitle: false,
-      ),
+      ) : null,
       body: ListView(
         children: [
           const ListTile(

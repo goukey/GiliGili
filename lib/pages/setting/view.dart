@@ -136,7 +136,7 @@ class _SettingPageState extends State<SettingPage> {
                     'styleSetting' => StyleSetting(showAppBar: false),
                     'extraSetting' => ExtraSetting(showAppBar: false),
                     'about' => AboutPage(showAppBar: false),
-                    'tvModeSetting' => const SizedBox.shrink(),
+                    'tvModeSetting' => const TVModeSetting(showAppBar: false),
                     _ => const SizedBox.shrink(),
                   },
                 )
