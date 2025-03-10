@@ -5,6 +5,7 @@ import 'package:PiliPlus/pages/setting/play_setting.dart';
 import 'package:PiliPlus/pages/setting/privacy_setting.dart';
 import 'package:PiliPlus/pages/setting/recommend_setting.dart';
 import 'package:PiliPlus/pages/setting/style_setting.dart';
+import 'package:PiliPlus/pages/setting/tv_mode_setting.dart';
 import 'package:PiliPlus/pages/setting/video_setting.dart';
 import 'package:PiliPlus/utils/extension.dart';
 import 'package:PiliPlus/utils/login.dart';
