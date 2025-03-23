@@ -1,0 +1,86 @@
+name: Android Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'lib/**'
+      - 'android/**'
+      - 'pubspec.yaml'
+      - '.github/workflows/android.yml'
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 代码迁出
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 构建Java环境
+        uses: actions/setup-java@v4
+        with:
+          distribution: "zulu"
+          java-version: "17"
+
+      - name: 检查缓存
+        uses: actions/cache@v4
+        id: cache-flutter
+        with:
+          path: /root/flutter-sdk # Flutter SDK 的路径
+          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.lock') }}
+
+      - name: 安装Flutter
+        if: steps.cache-flutter.outputs.cache-hit != 'true'
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version-file: pubspec.yaml
+
+      - name: 修复3.24的stable显示中文不正确问题 // from orz12
+        run: |
+            version=$(grep -m 1 'flutter:' pubspec.yaml | awk '{print $2}')
+            if [ "$(echo "$version < 3.27.0" | awk '{print ($1 < $2)}')" -eq 1 ]; then
+              cd $FLUTTER_ROOT
+              git config --global user.name "orz12"
+              git config --global user.email "orz12@test.com"
+              git cherry-pick d4124bd --strategy-option theirs
+              # flutter precache
+              flutter --version
+              cd -
+            fi
+
+      - name: 下载项目依赖
+        run: flutter pub get
+
+      - name: 更新版本号
+        run: |
+          version_name=$(yq e .version pubspec.yaml | cut -d "+" -f 1)
+          sed -i "s/version: .*/version: $version_name-$(git rev-parse --short HEAD)+$(git rev-list --count HEAD)/g" pubspec.yaml
+
+      - name: Write key
+        run: |
+          if [ ! -z "${{ secrets.SIGN_KEYSTORE_BASE64 }}" ]; then
+            echo "${{ secrets.SIGN_KEYSTORE_BASE64 }}" | base64 --decode > android/app/key.jks
+            echo storeFile='key.jks' >> android/key.properties
+            echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> android/key.properties
+            echo keyAlias='${{ secrets.KEY_ALIAS }}' >> android/key.properties
+            echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> android/key.properties
+          fi
+
+      - name: flutter build apk
+        run: |
+          chmod +x lib/scripts/build.sh
+          lib/scripts/build.sh
+          flutter build apk --release --target-platform=android-arm
+
+      - name: 上传
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-armeabi-v7a
+          path: |
+            build/app/outputs/flutter-apk/app-release.apk
