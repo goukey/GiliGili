@@ -13,9 +13,26 @@ class TvFocusUtils {
     KeyEventResult Function(FocusNode, RawKeyEvent)? onKey,
   }) {
     return FocusNode(
-      onFocusChange: onFocusChange,
-      onKey: onKey ?? _defaultOnKey,
-    );
+      onKeyEvent: onKey != null 
+        ? (FocusNode node, KeyEvent event) {
+            if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.enter) {
+              return KeyEventResult.handled;
+            }
+            return KeyEventResult.ignored;
+          }
+        : null,
+      debugLabel: 'TvFocusNode',
+    )..addListener(() {
+        if (onFocusChange != null) {
+          onFocusChange(FocusScope.of(TvFocusUtils._buildContext!).hasFocus);
+        }
+      });
+  }
+
+  static BuildContext? _buildContext;
+  
+  static void setBuildContext(BuildContext context) {
+    _buildContext = context;
   }
 
   /// 默认的按键处理函数，处理方向键导航和确认键操作
@@ -45,29 +62,33 @@ class TvFocusUtils {
     VoidCallback? onBlur,
     FocusNode? focusNode,
   }) {
-    final FocusNode node = focusNode ?? createFocusNode(
-      onFocusChange: (hasFocus) {
-        if (hasFocus) {
+    final FocusNode node = focusNode ?? FocusNode(
+      debugLabel: 'TvDetectorFocusNode',
+    );
+    
+    // 添加焦点监听器
+    if (onFocus != null || onBlur != null) {
+      node.addListener(() {
+        if (node.hasFocus) {
           onFocus?.call();
         } else {
           onBlur?.call();
         }
-      },
-      onKey: (node, event) {
-        if (event is! RawKeyDownEvent) return KeyEventResult.ignored;
-        
-        if (event.logicalKey == LogicalKeyboardKey.select ||
-            event.logicalKey == LogicalKeyboardKey.enter) {
-          onTap();
-          return KeyEventResult.handled;
-        }
-        
-        return KeyEventResult.ignored;
-      },
-    );
+      });
+    }
 
     return Focus(
       focusNode: node,
+      onKeyEvent: (node, event) {
+        if (event is KeyDownEvent) {
+          if (event.logicalKey == LogicalKeyboardKey.select ||
+              event.logicalKey == LogicalKeyboardKey.enter) {
+            onTap();
+            return KeyEventResult.handled;
+          }
+        }
+        return KeyEventResult.ignored;
+      },
       child: GestureDetector(
         onTap: onTap,
         child: child,
@@ -103,30 +124,37 @@ class TvFocusable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final FocusNode node = focusNode ?? TvFocusUtils.createFocusNode(
-      onFocusChange: (hasFocus) {
-        if (hasFocus) {
+    // 存储BuildContext
+    TvFocusUtils.setBuildContext(context);
+    
+    final FocusNode node = focusNode ?? FocusNode(
+      debugLabel: 'TvFocusableFocusNode',
+    );
+    
+    // 添加焦点监听器
+    if (onFocus != null || onBlur != null) {
+      node.addListener(() {
+        if (node.hasFocus) {
           onFocus?.call();
         } else {
           onBlur?.call();
         }
-      },
-      onKey: (node, event) {
-        if (event is! RawKeyDownEvent) return KeyEventResult.ignored;
-        
-        if (event.logicalKey == LogicalKeyboardKey.select ||
-            event.logicalKey == LogicalKeyboardKey.enter) {
-          onTap?.call();
-          return KeyEventResult.handled;
-        }
-        
-        return KeyEventResult.ignored;
-      },
-    );
+      });
+    }
 
     return Focus(
       focusNode: node,
       autofocus: autoFocus,
+      onKeyEvent: (node, event) {
+        if (event is KeyDownEvent) {
+          if (event.logicalKey == LogicalKeyboardKey.select ||
+              event.logicalKey == LogicalKeyboardKey.enter) {
+            onTap?.call();
+            return KeyEventResult.handled;
+          }
+        }
+        return KeyEventResult.ignored;
+      },
       child: Builder(
         builder: (context) {
           final FocusNode focusNode = Focus.of(context);
