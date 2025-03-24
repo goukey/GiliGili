@@ -728,22 +728,31 @@ class VideoDetailResModel {
   final int code;
   final String message;
   final VideoDetailData? data;
+  final List<VideoDetailResPart> pages;
 
   VideoDetailResModel({
     required this.code,
     required this.message,
     this.data,
+    this.pages = const [],
   });
 
   // 添加便捷访问器
   String? get title => data?.title;
-  List<VideoDetailResPart> get pages => data?.pages ?? [];
 
   factory VideoDetailResModel.fromJson(Map<String, dynamic> json) {
+    List<VideoDetailResPart> pages = [];
+    if (json['data'] != null && json['data']['pages'] != null) {
+      pages = (json['data']['pages'] as List)
+          .map((e) => VideoDetailResPart.fromJson(e))
+          .toList();
+    }
+    
     return VideoDetailResModel(
       code: json['code'] ?? 0,
       message: json['message'] ?? '',
       data: json['data'] != null ? VideoDetailData.fromJson(json['data']) : null,
+      pages: pages,
     );
   }
 
@@ -752,16 +761,17 @@ class VideoDetailResModel {
       'code': code,
       'message': message,
       'data': data?.toJson(),
+      'pages': pages.map((e) => e.toJson()).toList(),
     };
   }
 }
 
 // 添加VideoDetailResPart类，用于tv_player_page.dart中的分P列表
 class VideoDetailResPart {
-  int? cid;
-  int? page;
-  String? part;
-  int? duration;
+  final int? cid;
+  final int? page;
+  final String? part;
+  final int? duration;
 
   VideoDetailResPart({
     this.cid,
@@ -769,9 +779,6 @@ class VideoDetailResPart {
     this.part,
     this.duration,
   });
-
-  // 添加title属性访问器，为了兼容代码
-  String? get title => part;
 
   factory VideoDetailResPart.fromJson(Map<String, dynamic> json) {
     return VideoDetailResPart(
