@@ -722,3 +722,55 @@ class EpisodeItem {
         : Arc.fromJson(json['arc'] as Map<String, dynamic>);
   }
 }
+
+// 添加VideoDetailResModel类，用于tv_player_page.dart中的视频详情数据
+class VideoDetailResModel {
+  VideoDetailData? data;
+  
+  VideoDetailResModel({
+    this.data,
+  });
+  
+  VideoDetailResModel.fromJson(Map<String, dynamic> json) {
+    data = json["data"] == null ? null : VideoDetailData.fromJson(json["data"]);
+  }
+  
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> result = <String, dynamic>{};
+    if (data != null) {
+      result["data"] = data!.toJson();
+    }
+    return result;
+  }
+}
+
+// 添加VideoDetailResPart类，用于tv_player_page.dart中的分P列表
+class VideoDetailResPart {
+  int? cid;
+  int? page;
+  String? part;
+  int? duration;
+  
+  VideoDetailResPart({
+    this.cid,
+    this.page,
+    this.part,
+    this.duration,
+  });
+  
+  VideoDetailResPart.fromJson(Map<String, dynamic> json) {
+    cid = json["cid"];
+    page = json["page"];
+    part = json["part"];
+    duration = json["duration"];
+  }
+  
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> result = <String, dynamic>{};
+    result["cid"] = cid;
+    result["page"] = page;
+    result["part"] = part;
+    result["duration"] = duration;
+    return result;
+  }
+}
