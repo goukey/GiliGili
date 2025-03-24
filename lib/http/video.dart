@@ -1147,6 +1147,10 @@ class VideoApi {
     }
   }
 
+  Future<VideoDetailResModel?> getVideoDetail(String bvid) async {
+    return getDetail(bvid);
+  }
+
   Future<UrlNoModel?> getUrl(String bvid, int cid) async {
     try {
       Map<String, dynamic> data = {
@@ -1174,6 +1178,71 @@ class VideoApi {
       }
     } catch (e) {
       log('获取视频URL失败: $e');
+      return null;
+    }
+  }
+  
+  // 获取推荐信息流
+  Future<RcmdResponse?> getRcmdFeed() async {
+    try {
+      var res = await Request().get(
+        Api.recommendListWeb,
+        queryParameters: {
+          'version': 1,
+          'feed_version': 'V8',
+          'homepage_ver': 1,
+          'ps': 20,
+          'fresh_type': 4,
+        },
+      );
+      if (res.data['code'] == 0) {
+        return RcmdResponse.fromJson(res.data['data']);
+      } else {
+        return null;
+      }
+    } catch (e) {
+      log('获取推荐信息失败: $e');
+      return null;
+    }
+  }
+
+  // 获取分区列表
+  Future<List<Region>?> getRegionList() async {
+    try {
+      var res = await Request().get(Api.regionList);
+      if (res.data['code'] == 0) {
+        List<Region> regions = [];
+        for (var region in res.data['data']) {
+          regions.add(Region.fromJson(region));
+        }
+        return regions;
+      } else {
+        return null;
+      }
+    } catch (e) {
+      log('获取分区列表失败: $e');
+      return null;
+    }
+  }
+
+  // 获取分区视频
+  Future<RegionResponse?> getRegionVideos(int tid, int pn) async {
+    try {
+      var res = await Request().get(
+        Api.regionVideos,
+        queryParameters: {
+          'rid': tid,
+          'pn': pn,
+          'ps': 20,
+        },
+      );
+      if (res.data['code'] == 0) {
+        return RegionResponse.fromJson(res.data['data']);
+      } else {
+        return null;
+      }
+    } catch (e) {
+      log('获取分区视频失败: $e');
       return null;
     }
   }
