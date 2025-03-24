@@ -76,6 +76,19 @@ jobs:
         run: |
           chmod +x lib/scripts/build.sh
           lib/scripts/build.sh
+          
+      - name: 检查构建的APK文件
+        run: |
+          echo "查找构建的APK文件:"
+          find build -name "*.apk" -type f || echo "未找到任何APK文件"
+          
+          if [ -f "build/app/outputs/flutter-apk/app-release.apk" ]; then
+            echo "找到APK文件，大小:"
+            ls -lh build/app/outputs/flutter-apk/app-release.apk
+          else
+            echo "错误: 未找到APK文件!"
+            exit 1
+          fi
 
       - name: 上传
         uses: actions/upload-artifact@v4
