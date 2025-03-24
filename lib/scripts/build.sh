@@ -3,19 +3,12 @@
 set -e  # 遇到错误立即退出
 set -x  # 打印执行的每一行命令
 
-# 确保Flutter命令可用
-export PATH="$PATH:/home/runner/work/_tool/flutter/flutter/bin"
-
 # 显示当前目录
 echo "当前工作目录: $(pwd)"
 
 # 安装依赖
 echo "安装依赖..."
 flutter pub get
-
-# 生成JSON序列化代码
-echo "生成JSON序列化代码..."
-flutter pub run build_runner build --delete-conflicting-outputs
 
 # 添加版本信息
 echo "添加版本信息..."

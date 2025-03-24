@@ -1,8 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'quality_item.g.dart';
+// 不再使用自动生成的代码
+// part 'quality_item.g.dart';
 
-@JsonSerializable()
+// 手动实现序列化和反序列化代码
 class QualityItem {
   final int id;
   final String quality;
@@ -16,11 +17,25 @@ class QualityItem {
     required this.needVip,
   });
 
-  factory QualityItem.fromJson(Map<String, dynamic> json) => _$QualityItemFromJson(json);
-  Map<String, dynamic> toJson() => _$QualityItemToJson(this);
+  factory QualityItem.fromJson(Map<String, dynamic> json) {
+    return QualityItem(
+      id: json['id'] as int,
+      quality: json['quality'] as String,
+      desc: json['desc'] as String,
+      needVip: json['needVip'] as bool,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'quality': quality,
+      'desc': desc,
+      'needVip': needVip,
+    };
+  }
 }
 
-@JsonSerializable()
 class Accept {
   final int quality;
   final String format;
@@ -34,6 +49,21 @@ class Accept {
     required this.codecs,
   });
   
-  factory Accept.fromJson(Map<String, dynamic> json) => _$AcceptFromJson(json);
-  Map<String, dynamic> toJson() => _$AcceptToJson(this);
+  factory Accept.fromJson(Map<String, dynamic> json) {
+    return Accept(
+      quality: json['quality'] as int,
+      format: json['format'] as String,
+      description: json['description'] as String,
+      codecs: json['codecs'] as String,
+    );
+  }
+  
+  Map<String, dynamic> toJson() {
+    return {
+      'quality': quality,
+      'format': format,
+      'description': description,
+      'codecs': codecs,
+    };
+  }
 } 
