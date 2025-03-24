@@ -1,4 +1,4 @@
-package com.example.piliplus
+package com.example.giligili
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
@@ -18,7 +18,7 @@ class MainActivity : AudioServiceActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
 
-        methodChannel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "PiliPlus")
+        methodChannel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "GiliGili")
         methodChannel.setMethodCallHandler { call, result ->
             if (call.method == "back") {
                 back()
