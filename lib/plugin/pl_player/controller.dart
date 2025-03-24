@@ -1649,16 +1649,6 @@ class PlPlayerController {
   late final RxList dmTrend = [].obs;
   late final RxBool showDmChart = true.obs;
 
-  // 添加状态监听器
-  void addStatusListener(Function(PlayerStatus) listener) {
-    _statusListeners.add(listener);
-  }
-
-  // 移除状态监听器
-  void removeStatusListener(Function(PlayerStatus) listener) {
-    _statusListeners.remove(listener);
-  }
-
   // 重置播放器状态
   void reset() {
     _videoPlayerController?.stop();
