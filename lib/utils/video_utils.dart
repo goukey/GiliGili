@@ -9,8 +9,10 @@ import 'package:GiliGili/models/video/play/quality.dart';
 import 'package:GiliGili/utils/utils.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:intl/intl.dart';
 
 import '../models/live/room_info.dart';
+import '../models/video/quality_item.dart';
 
 class VideoUtils {
   static String getCdnUrl(dynamic item, [defaultCDNService]) {

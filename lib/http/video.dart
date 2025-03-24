@@ -22,6 +22,9 @@ import '../utils/wbi_sign.dart';
 import 'api.dart';
 import 'init.dart';
 import 'login.dart';
+import '../models/video/quality_item.dart';
+import '../models/video/rcmd_response.dart';
+import '../models/video/region.dart';
 
 /// res.data['code'] == 0 请求正常返回结果
 /// res.data['data'] 为结果
