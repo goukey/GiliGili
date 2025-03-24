@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# 先运行代码生成
+flutter pub run build_runner build --delete-conflicting-outputs
+
+# 然后构建APK
+flutter build apk --release --target-platform=android-arm
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   build_time=$(date -u -v+8H +"%Y-%m-%d %H:%M:%S")
 else
