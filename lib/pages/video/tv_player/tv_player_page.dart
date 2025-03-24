@@ -264,279 +264,209 @@ class TvPlayerController extends GetxController {
   }
 }
 
-class TvPlayerPage extends StatelessWidget {
+class TvPlayerPage extends GetView<TvPlayerController> {
   const TvPlayerPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // 从Get.arguments中获取额外参数
-    final Map<String, dynamic> arguments = Get.arguments;
-    final bool autoFullScreen = arguments['autoFullScreen'] ?? false;
-    final bool autoPlayNext = arguments['autoPlayNext'] ?? true;
-    final bool exitWhenAllFinished = arguments['exitWhenAllFinished'] ?? true;
+    // 设置沉浸式全屏
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
     
-    // 创建控制器并传入参数
-    final controller = Get.put(TvPlayerController(
-      autoFullScreen: autoFullScreen,
-      autoPlayNext: autoPlayNext,
-      exitWhenAllFinished: exitWhenAllFinished,
-    ));
-    
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: WillPopScope(
-        onWillPop: () async {
-          if (controller.showControls.value) {
-            controller.hideControlsPanel();
-            return false;
-          }
-          return true;
-        },
-        child: RawKeyboardListener(
-          focusNode: FocusNode(),
-          autofocus: true,
-          onKey: (RawKeyEvent event) {
-            if (event is RawKeyDownEvent) {
-              // 处理遥控器按键
-              if (event.logicalKey == LogicalKeyboardKey.select ||
-                  event.logicalKey == LogicalKeyboardKey.enter) {
-                if (controller.showControls.value) {
-                  controller.hideControlsPanel();
-                } else {
-                  controller.showControlsPanel();
-                }
-              } else if (event.logicalKey == LogicalKeyboardKey.mediaPlayPause) {
-                controller.togglePlay();
-                controller.showControlsPanel();
-              } else if (event.logicalKey == LogicalKeyboardKey.mediaFastForward ||
-                         event.logicalKey == LogicalKeyboardKey.arrowRight) {
-                controller.fastForward();
-                controller.showControlsPanel();
-              } else if (event.logicalKey == LogicalKeyboardKey.mediaRewind ||
-                         event.logicalKey == LogicalKeyboardKey.arrowLeft) {
-                controller.rewind();
-                controller.showControlsPanel();
-              } else if (event.logicalKey == LogicalKeyboardKey.escape ||
-                         event.logicalKey == LogicalKeyboardKey.goBack) {
-                if (controller.showControls.value) {
-                  controller.hideControlsPanel();
-                } else {
-                  Get.back();
-                }
-              }
-            }
-          },
-          child: Stack(
-            children: [
-              // 视频播放器
-              Obx(() => controller.isLoading.value
-                ? const Center(child: CircularProgressIndicator())
-                : Center(
-                    child: AspectRatio(
-                      aspectRatio: 16 / 9,
-                      child: PlVideo(
-                        controller: controller.playerController,
-                        looping: false,
-                        autoPlay: true,
-                        freeControls: true,
-                      ),
-                    ),
-                  )
+    return WillPopScope(
+      onWillPop: () async {
+        // 退出页面时恢复系统UI
+        SystemChrome.setEnabledSystemUIMode(
+          SystemUiMode.manual,
+          overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom],
+        );
+        return true;
+      },
+      child: Scaffold(
+        backgroundColor: Colors.black,
+        body: Obx(() {
+          if (controller.isLoading.value) {
+            // 加载中
+            return const Center(child: CircularProgressIndicator());
+          } else if (controller.isError.value) {
+            // 加载错误
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    controller.errorMsg.value,
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () => controller._fetchVideoDetail(),
+                    child: const Text('重试'),
+                  ),
+                ],
               ),
-              
-              // 错误提示
-              Obx(() => controller.isError.value
-                ? Center(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(Icons.error_outline, size: 48, color: Colors.white),
-                        const SizedBox(height: 16),
-                        Text(
-                          controller.errorMsg.value,
-                          style: const TextStyle(color: Colors.white),
-                          textAlign: TextAlign.center,
-                        ),
-                        const SizedBox(height: 24),
-                        TvFocusable(
-                          autoFocus: true,
-                          onTap: () => controller._fetchVideoDetail(),
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).colorScheme.primary.withOpacity(0.8),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: const Text(
-                              '重试',
-                              style: TextStyle(color: Colors.white, fontSize: 16),
+            );
+          } else {
+            // 播放器内容
+            return Column(
+              children: [
+                Expanded(
+                  child: PLVideoPlayer(
+                    plPlayerController: controller.playerController,
+                    customWidgets: [
+                      _buildPartsList(),
+                      _buildQualitySelectionList(),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          }
+        }),
+      ),
+    );
+  }
+
+  // 构建分P列表
+  Widget _buildPartsList() {
+    return Obx(() {
+      return Positioned(
+        left: 20,
+        top: 70,
+        child: Visibility(
+          visible: controller.showControls.value,
+          child: Container(
+            width: 250,
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.7),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  '分P列表',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                SizedBox(
+                  height: 200,
+                  child: ListView.builder(
+                    itemCount: controller.parts.length,
+                    itemBuilder: (context, index) {
+                      final part = controller.parts[index];
+                      final isSelected = index == controller.currentPartIndex;
+                      
+                      return TvFocusable(
+                        focusNode: FocusNode(),
+                        onTap: () => controller.switchPart(index),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 8,
+                            horizontal: 10,
+                          ),
+                          decoration: BoxDecoration(
+                            color: isSelected
+                                ? Colors.blue.withOpacity(0.3)
+                                : Colors.transparent,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Text(
+                            '${index + 1}: ${part.part}',
+                            style: TextStyle(
+                              color: isSelected ? Colors.blue : Colors.white,
+                              fontWeight: isSelected
+                                  ? FontWeight.bold
+                                  : FontWeight.normal,
                             ),
                           ),
                         ),
-                      ],
-                    ),
-                  )
-                : const SizedBox.shrink()
-              ),
-              
-              // 控制面板
-              Obx(() => controller.showControls.value
-                ? _buildControlPanel(context, controller)
-                : const SizedBox.shrink()
-              ),
-            ],
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
-  
-  Widget _buildControlPanel(BuildContext context, TvPlayerController controller) {
-    return Container(
-      color: Colors.black.withOpacity(0.5),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          // 顶部控制栏
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
+
+  // 构建清晰度选择列表
+  Widget _buildQualitySelectionList() {
+    return Obx(() {
+      return Positioned(
+        right: 20,
+        top: 70,
+        child: Visibility(
+          visible: controller.showControls.value,
+          child: Container(
+            width: 200,
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.7),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TvFocusable(
-                  onTap: () => Get.back(),
-                  child: const Icon(Icons.arrow_back, color: Colors.white, size: 28),
-                ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: Text(
-                    controller.videoDetail.value?.title ?? '',
-                    style: const TextStyle(color: Colors.white, fontSize: 18),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                const Text(
+                  '清晰度',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ],
-            ),
-          ),
-          
-          // 中间控制部分
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TvFocusable(
-                onTap: () => controller.rewind(),
-                child: const Icon(Icons.replay_10, color: Colors.white, size: 40),
-              ),
-              const SizedBox(width: 32),
-              Obx(() => TvFocusable(
-                autoFocus: true,
-                onTap: () => controller.togglePlay(),
-                child: Icon(
-                  controller.playerController.playerStatus.isPlaying 
-                    ? Icons.pause 
-                    : Icons.play_arrow,
-                  color: Colors.white,
-                  size: 60,
-                ),
-              )),
-              const SizedBox(width: 32),
-              TvFocusable(
-                onTap: () => controller.fastForward(),
-                child: const Icon(Icons.forward_10, color: Colors.white, size: 40),
-              ),
-            ],
-          ),
-          
-          // 底部进度条
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                Obx(() {
-                  // 获取播放进度和总时长
-                  final position = controller.playerController.position.value;
-                  final duration = controller.playerController.duration.value;
-                  
-                  return Row(
-                    children: [
-                      Text(
-                        _formatDuration(position),
-                        style: const TextStyle(color: Colors.white),
-                      ),
-                      Expanded(
-                        child: SliderTheme(
-                          data: SliderTheme.of(context).copyWith(
-                            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 8),
-                            overlayShape: const RoundSliderOverlayShape(overlayRadius: 16),
-                            trackHeight: 4,
+                const SizedBox(height: 10),
+                SizedBox(
+                  height: 150,
+                  child: ListView.builder(
+                    itemCount: controller.qualityItems.length,
+                    itemBuilder: (context, index) {
+                      final quality = controller.qualityItems[index];
+                      final isSelected = quality.id == controller.currentQuality.value.id;
+                      
+                      return TvFocusable(
+                        focusNode: FocusNode(),
+                        onTap: () {
+                          // 切换清晰度
+                          // TODO: 实现清晰度切换功能
+                          SmartDialog.showToast('切换清晰度功能尚未实现');
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 8,
+                            horizontal: 10,
                           ),
-                          child: Slider(
-                            value: position.inSeconds.toDouble(),
-                            min: 0,
-                            max: duration.inSeconds.toDouble(),
-                            onChanged: (value) {
-                              final newPosition = Duration(seconds: value.toInt());
-                              controller.seekTo(newPosition);
-                            },
+                          decoration: BoxDecoration(
+                            color: isSelected
+                                ? Colors.blue.withOpacity(0.3)
+                                : Colors.transparent,
+                            borderRadius: BorderRadius.circular(4),
                           ),
-                        ),
-                      ),
-                      Text(
-                        _formatDuration(duration),
-                        style: const TextStyle(color: Colors.white),
-                      ),
-                    ],
-                  );
-                }),
-                
-                const SizedBox(height: 16),
-                
-                // 分P选择
-                if (controller.parts.length > 1)
-                  SizedBox(
-                    height: 40,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: controller.parts.length,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 8),
-                          child: TvFocusable(
-                            onTap: () => controller.switchPart(index),
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                              decoration: BoxDecoration(
-                                color: controller.currentPartIndex == index 
-                                  ? Theme.of(context).colorScheme.primary 
-                                  : Colors.grey.withOpacity(0.3),
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              child: Text(
-                                "P${index + 1}: ${controller.parts[index].title}",
-                                style: const TextStyle(color: Colors.white),
-                              ),
+                          child: Text(
+                            quality.quality,
+                            style: TextStyle(
+                              color: isSelected ? Colors.blue : Colors.white,
+                              fontWeight: isSelected
+                                  ? FontWeight.bold
+                                  : FontWeight.normal,
                             ),
                           ),
-                        );
-                      },
-                    ),
+                        ),
+                      );
+                    },
                   ),
+                ),
               ],
             ),
           ),
-        ],
-      ),
-    );
-  }
-  
-  String _formatDuration(Duration duration) {
-    String twoDigits(int n) => n.toString().padLeft(2, '0');
-    String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60));
-    String twoDigitSeconds = twoDigits(duration.inSeconds.remainder(60));
-    if (duration.inHours > 0) {
-      return "${twoDigits(duration.inHours)}:$twoDigitMinutes:$twoDigitSeconds";
-    } else {
-      return "$twoDigitMinutes:$twoDigitSeconds";
-    }
+        ),
+      );
+    });
   }
 } 
