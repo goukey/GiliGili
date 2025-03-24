@@ -1,6 +1,6 @@
 import 'dart:io';
-import 'package:PiliPlus/common/widgets/loading_widget.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/loading_widget.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import '../../../services/loggeer.dart';
 

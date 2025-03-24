@@ -1,9 +1,9 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/http/member.dart';
-import 'package:PiliPlus/models/space_article/item.dart';
-import 'package:PiliPlus/models/space_article/data.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/http/member.dart';
+import 'package:GiliGili/models/space_article/item.dart';
+import 'package:GiliGili/models/space_article/data.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/utils/extension.dart';
 
 class MemberArticleCtr extends CommonController {
   MemberArticleCtr({

@@ -2,19 +2,19 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/icon_button.dart';
-import 'package:PiliPlus/common/widgets/interactiveviewer_gallery/interactiveviewer_gallery.dart'
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/icon_button.dart';
+import 'package:GiliGili/common/widgets/interactiveviewer_gallery/interactiveviewer_gallery.dart'
     show SourceModel, SourceType;
-import 'package:PiliPlus/http/msg.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/http/msg.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:chat_bottom_container/chat_bottom_container.dart';
 import 'package:easy_debounce/easy_throttle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/models/video/reply/emote.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
+import 'package:GiliGili/models/video/reply/emote.dart';
+import 'package:GiliGili/utils/feed_back.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 

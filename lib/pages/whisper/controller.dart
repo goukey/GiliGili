@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/http/msg.dart';
-import 'package:PiliPlus/models/msg/account.dart';
-import 'package:PiliPlus/models/msg/session.dart';
+import 'package:GiliGili/http/msg.dart';
+import 'package:GiliGili/models/msg/account.dart';
+import 'package:GiliGili/models/msg/session.dart';
 
 import '../../models/msg/msgfeed_unread.dart';
 import '../../utils/storage.dart';

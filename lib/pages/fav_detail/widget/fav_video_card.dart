@@ -1,18 +1,18 @@
-import 'package:PiliPlus/common/widgets/icon_button.dart';
-import 'package:PiliPlus/common/widgets/image_save.dart';
-import 'package:PiliPlus/models/user/fav_detail.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/common/widgets/icon_button.dart';
+import 'package:GiliGili/common/widgets/image_save.dart';
+import 'package:GiliGili/models/user/fav_detail.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/stat/danmu.dart';
-import 'package:PiliPlus/common/widgets/stat/view.dart';
-import 'package:PiliPlus/http/search.dart';
-import 'package:PiliPlus/http/video.dart';
-import 'package:PiliPlus/utils/id_utils.dart';
-import 'package:PiliPlus/utils/utils.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/stat/danmu.dart';
+import 'package:GiliGili/common/widgets/stat/view.dart';
+import 'package:GiliGili/http/search.dart';
+import 'package:GiliGili/http/video.dart';
+import 'package:GiliGili/utils/id_utils.dart';
+import 'package:GiliGili/utils/utils.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
 import '../../../common/widgets/badge.dart';
 
 // 收藏视频卡片 - 水平布局

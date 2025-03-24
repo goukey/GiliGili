@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/pages/mine/view.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/pages/mine/view.dart';
+import 'package:GiliGili/utils/storage.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});

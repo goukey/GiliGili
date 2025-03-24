@@ -1,20 +1,20 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:PiliPlus/common/widgets/refresh_indicator.dart';
-import 'package:PiliPlus/http/msg.dart';
-import 'package:PiliPlus/models/msg/session.dart';
-import 'package:PiliPlus/pages/common/common_publish_page.dart';
-import 'package:PiliPlus/pages/emote/view.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/refresh_indicator.dart';
+import 'package:GiliGili/http/msg.dart';
+import 'package:GiliGili/models/msg/session.dart';
+import 'package:GiliGili/pages/common/common_publish_page.dart';
+import 'package:GiliGili/pages/emote/view.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:mime/mime.dart';
 
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/pages/whisper_detail/controller.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/pages/whisper_detail/controller.dart';
+import 'package:GiliGili/utils/feed_back.dart';
 import 'package:image_picker/image_picker.dart';
 import 'widget/chat_item.dart';
 

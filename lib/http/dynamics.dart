@@ -1,6 +1,6 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/utils/accounts/account.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/utils/accounts/account.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:dio/dio.dart';
 
 import '../models/dynamics/result.dart';

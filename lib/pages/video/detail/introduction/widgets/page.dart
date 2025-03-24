@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:PiliPlus/pages/video/detail/introduction/controller.dart';
+import 'package:GiliGili/pages/video/detail/introduction/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/models/video_detail_res.dart';
-import 'package:PiliPlus/pages/video/detail/index.dart';
+import 'package:GiliGili/models/video_detail_res.dart';
+import 'package:GiliGili/pages/video/detail/index.dart';
 
 import '../../../../../utils/id_utils.dart';
 

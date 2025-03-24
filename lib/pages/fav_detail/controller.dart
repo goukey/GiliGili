@@ -1,15 +1,15 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/http/user.dart';
-import 'package:PiliPlus/models/user/fav_detail.dart';
-import 'package:PiliPlus/models/user/fav_folder.dart';
-import 'package:PiliPlus/pages/common/multi_select_controller.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/storage.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/http/user.dart';
+import 'package:GiliGili/models/user/fav_detail.dart';
+import 'package:GiliGili/models/user/fav_folder.dart';
+import 'package:GiliGili/pages/common/multi_select_controller.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/storage.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/http/video.dart';
+import 'package:GiliGili/http/video.dart';
 
 class FavDetailController extends MultiSelectController {
   Rx<FavFolderItemData> item = FavFolderItemData().obs;

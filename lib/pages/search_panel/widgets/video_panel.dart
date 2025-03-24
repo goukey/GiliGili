@@ -1,14 +1,14 @@
-import 'package:PiliPlus/common/widgets/custom_sliver_persistent_header_delegate.dart';
-import 'package:PiliPlus/common/widgets/http_error.dart';
-import 'package:PiliPlus/common/widgets/loading_widget.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/pages/search/widgets/search_text.dart';
+import 'package:GiliGili/common/widgets/custom_sliver_persistent_header_delegate.dart';
+import 'package:GiliGili/common/widgets/http_error.dart';
+import 'package:GiliGili/common/widgets/loading_widget.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/pages/search/widgets/search_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/video_card_h.dart';
-import 'package:PiliPlus/models/common/search_type.dart';
-import 'package:PiliPlus/pages/search_panel/index.dart';
+import 'package:GiliGili/common/widgets/video_card_h.dart';
+import 'package:GiliGili/models/common/search_type.dart';
+import 'package:GiliGili/pages/search_panel/index.dart';
 import 'package:intl/intl.dart';
 
 import '../../../common/constants.dart';

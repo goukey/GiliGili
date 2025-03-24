@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:PiliPlus/common/widgets/interactiveviewer_gallery/interactiveviewer_gallery.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/common/widgets/interactiveviewer_gallery/interactiveviewer_gallery.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 import '../../../http/search.dart';
 

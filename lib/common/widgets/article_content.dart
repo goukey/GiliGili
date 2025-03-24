@@ -1,8 +1,8 @@
-import 'package:PiliPlus/common/widgets/interactiveviewer_gallery/interactiveviewer_gallery.dart'
+import 'package:GiliGili/common/widgets/interactiveviewer_gallery/interactiveviewer_gallery.dart'
     show SourceModel;
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/models/dynamics/article_content_model.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/models/dynamics/article_content_model.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';

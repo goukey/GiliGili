@@ -1,11 +1,11 @@
-import 'package:PiliPlus/pages/fav_search/view.dart' show SearchType;
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/pages/fav_search/view.dart' show SearchType;
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'controller.dart';
 import 'widgets/follow_list.dart';
 import 'widgets/owner_follow_list.dart';
-import 'package:PiliPlus/common/widgets/spring_physics.dart';
+import 'package:GiliGili/common/widgets/spring_physics.dart';
 
 class FollowPage extends StatefulWidget {
   const FollowPage({super.key});

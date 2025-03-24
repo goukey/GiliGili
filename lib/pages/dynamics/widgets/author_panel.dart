@@ -1,18 +1,18 @@
-import 'package:PiliPlus/common/widgets/report.dart';
-import 'package:PiliPlus/http/index.dart';
-import 'package:PiliPlus/http/video.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/common/widgets/report.dart';
+import 'package:GiliGili/http/index.dart';
+import 'package:GiliGili/http/video.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/http/user.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/http/user.dart';
+import 'package:GiliGili/utils/feed_back.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 import '../../../http/constants.dart';
 import '../controller.dart';

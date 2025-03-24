@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:PiliPlus/models/video/play/quality.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/models/video/play/quality.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:hive/hive.dart';
 
 class SetSelectItem extends StatefulWidget {

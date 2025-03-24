@@ -1,14 +1,14 @@
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/http/member.dart';
-import 'package:PiliPlus/http/user.dart';
-import 'package:PiliPlus/http/video.dart';
-import 'package:PiliPlus/models/member/archive.dart';
-import 'package:PiliPlus/models/member/coin.dart';
-import 'package:PiliPlus/models/member/info.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/http/member.dart';
+import 'package:GiliGili/http/user.dart';
+import 'package:GiliGili/http/video.dart';
+import 'package:GiliGili/models/member/archive.dart';
+import 'package:GiliGili/models/member/coin.dart';
+import 'package:GiliGili/models/member/info.dart';
+import 'package:GiliGili/utils/storage.dart';
 
 import '../video/detail/introduction/widgets/group_panel.dart';
 

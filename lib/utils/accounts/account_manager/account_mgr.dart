@@ -2,11 +2,11 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:PiliPlus/http/api.dart';
-import 'package:PiliPlus/http/constants.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/storage.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/http/api.dart';
+import 'package:GiliGili/http/constants.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/storage.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';

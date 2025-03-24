@@ -1,13 +1,13 @@
-import 'package:PiliPlus/models/user/danmaku_rule.dart';
+import 'package:GiliGili/models/user/danmaku_rule.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/utils/storage.dart';
 
 import '../../http/danmaku_block.dart';
 import '../../models/user/danmaku_block.dart';
 import '../../plugin/pl_player/controller.dart';
-import 'package:PiliPlus/common/widgets/spring_physics.dart';
+import 'package:GiliGili/common/widgets/spring_physics.dart';
 
 class DanmakuBlockPage extends StatefulWidget {
   const DanmakuBlockPage({super.key});

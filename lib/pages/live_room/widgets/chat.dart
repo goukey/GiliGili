@@ -1,7 +1,7 @@
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/pages/live_room/controller.dart';
-import 'package:PiliPlus/services/loggeer.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/pages/live_room/controller.dart';
+import 'package:GiliGili/services/loggeer.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,13 +1,13 @@
 import 'dart:math';
 
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/badge.dart';
-import 'package:PiliPlus/common/widgets/interactiveviewer_gallery/interactiveviewer_gallery.dart'
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/badge.dart';
+import 'package:GiliGili/common/widgets/interactiveviewer_gallery/interactiveviewer_gallery.dart'
     show SourceModel, SourceType;
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/common/widgets/nine_grid_view.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/common/widgets/nine_grid_view.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:flutter/material.dart';
 
 class ImageModel {

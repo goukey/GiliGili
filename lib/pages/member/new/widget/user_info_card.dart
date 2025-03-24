@@ -1,12 +1,12 @@
-import 'package:PiliPlus/common/widgets/interactiveviewer_gallery/interactiveviewer_gallery.dart'
+import 'package:GiliGili/common/widgets/interactiveviewer_gallery/interactiveviewer_gallery.dart'
     show SourceModel;
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/models/dynamics/result.dart';
-import 'package:PiliPlus/models/space/card.dart' as space;
-import 'package:PiliPlus/models/space/images.dart' as space;
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/storage.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/models/dynamics/result.dart';
+import 'package:GiliGili/models/space/card.dart' as space;
+import 'package:GiliGili/models/space/images.dart' as space;
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/storage.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

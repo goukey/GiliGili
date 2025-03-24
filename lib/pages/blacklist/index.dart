@@ -1,18 +1,18 @@
-import 'package:PiliPlus/common/widgets/dialog.dart';
-import 'package:PiliPlus/common/widgets/loading_widget.dart';
-import 'package:PiliPlus/common/widgets/refresh_indicator.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/http/video.dart';
-import 'package:PiliPlus/models/user/black.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/common/widgets/dialog.dart';
+import 'package:GiliGili/common/widgets/loading_widget.dart';
+import 'package:GiliGili/common/widgets/refresh_indicator.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/http/video.dart';
+import 'package:GiliGili/models/user/black.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/http/black.dart';
-import 'package:PiliPlus/utils/storage.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/http/black.dart';
+import 'package:GiliGili/utils/storage.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 class BlackListPage extends StatefulWidget {
   const BlackListPage({super.key});

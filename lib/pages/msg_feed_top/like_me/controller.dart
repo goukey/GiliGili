@@ -1,9 +1,9 @@
-import 'package:PiliPlus/common/widgets/pair.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/http/msg.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/models/msg/msgfeed_like_me.dart';
+import 'package:GiliGili/common/widgets/pair.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/http/msg.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/models/msg/msgfeed_like_me.dart';
 
 class LikeMeController extends CommonController {
   int cursor = -1;

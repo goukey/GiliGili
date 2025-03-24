@@ -1,8 +1,8 @@
-import 'package:PiliPlus/common/widgets/image_save.dart';
+import 'package:GiliGili/common/widgets/image_save.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 import 'rich_node_panel.dart';
 

@@ -1,29 +1,29 @@
 import 'dart:math';
 
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/badge.dart';
-import 'package:PiliPlus/common/widgets/imageview.dart';
-import 'package:PiliPlus/common/widgets/report.dart';
-import 'package:PiliPlus/grpc/app/main/community/reply/v1/reply.pb.dart';
-import 'package:PiliPlus/http/init.dart';
-import 'package:PiliPlus/http/video.dart';
-import 'package:PiliPlus/models/dynamics/result.dart';
-import 'package:PiliPlus/pages/video/detail/reply/widgets/zan_grpc.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/global_data.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/badge.dart';
+import 'package:GiliGili/common/widgets/imageview.dart';
+import 'package:GiliGili/common/widgets/report.dart';
+import 'package:GiliGili/grpc/app/main/community/reply/v1/reply.pb.dart';
+import 'package:GiliGili/http/init.dart';
+import 'package:GiliGili/http/video.dart';
+import 'package:GiliGili/models/dynamics/result.dart';
+import 'package:GiliGili/pages/video/detail/reply/widgets/zan_grpc.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/global_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/models/common/reply_type.dart';
-import 'package:PiliPlus/pages/video/detail/index.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
-import 'package:PiliPlus/utils/storage.dart';
-import 'package:PiliPlus/utils/url_utils.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/models/common/reply_type.dart';
+import 'package:GiliGili/pages/video/detail/index.dart';
+import 'package:GiliGili/utils/feed_back.dart';
+import 'package:GiliGili/utils/storage.dart';
+import 'package:GiliGili/utils/url_utils.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:html/parser.dart' show parse;
 
 class ReplyItemGrpc extends StatelessWidget {

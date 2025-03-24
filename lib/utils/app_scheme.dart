@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:PiliPlus/http/dynamics.dart';
-import 'package:PiliPlus/models/common/reply_type.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/http/dynamics.dart';
+import 'package:GiliGili/models/common/reply_type.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:app_links/app_links.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';

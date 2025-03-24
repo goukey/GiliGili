@@ -1,4 +1,4 @@
-import 'package:PiliPlus/http/loading_state.dart';
+import 'package:GiliGili/http/loading_state.dart';
 
 import '../models/bangumi/list.dart';
 import '../models/bangumi/pgc_index/condition.dart';

@@ -1,14 +1,14 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/http/member.dart';
-import 'package:PiliPlus/models/space_archive/data.dart';
-import 'package:PiliPlus/models/space_archive/item.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/pages/member/new/content/member_contribute/member_contribute.dart'
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/http/member.dart';
+import 'package:GiliGili/models/space_archive/data.dart';
+import 'package:GiliGili/models/space_archive/item.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/pages/member/new/content/member_contribute/member_contribute.dart'
     show ContributeType;
-import 'package:PiliPlus/pages/member/new/controller.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/pages/member/new/controller.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/models/space/data.dart' as space;
+import 'package:GiliGili/models/space/data.dart' as space;
 
 class MemberBangumiCtr extends CommonController {
   MemberBangumiCtr({

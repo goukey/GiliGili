@@ -1,8 +1,8 @@
-import 'package:PiliPlus/pages/common/common_collapse_slide_page.dart';
-import 'package:PiliPlus/pages/search/widgets/search_text.dart';
+import 'package:GiliGili/pages/common/common_collapse_slide_page.dart';
+import 'package:GiliGili/pages/search/widgets/search_text.dart';
 import 'package:flutter/material.dart';
-import 'package:PiliPlus/common/widgets/stat/danmu.dart';
-import 'package:PiliPlus/common/widgets/stat/view.dart';
+import 'package:GiliGili/common/widgets/stat/danmu.dart';
+import 'package:GiliGili/common/widgets/stat/view.dart';
 import 'package:get/get.dart';
 
 import '../../../../utils/utils.dart';

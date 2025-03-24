@@ -1,14 +1,14 @@
 import 'dart:math';
 
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/http/member.dart';
-import 'package:PiliPlus/http/video.dart';
-import 'package:PiliPlus/models/space/data.dart';
-import 'package:PiliPlus/models/space/item.dart';
-import 'package:PiliPlus/models/space/tab2.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/utils/storage.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/http/member.dart';
+import 'package:GiliGili/http/video.dart';
+import 'package:GiliGili/models/space/data.dart';
+import 'package:GiliGili/models/space/item.dart';
+import 'package:GiliGili/models/space/tab2.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/utils/storage.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';

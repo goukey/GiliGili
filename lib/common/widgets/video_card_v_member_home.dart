@@ -1,5 +1,5 @@
-import 'package:PiliPlus/common/widgets/image_save.dart';
-import 'package:PiliPlus/models/space/item.dart';
+import 'package:GiliGili/common/widgets/image_save.dart';
+import 'package:GiliGili/models/space/item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import '../../utils/utils.dart';

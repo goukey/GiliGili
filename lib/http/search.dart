@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-import 'package:PiliPlus/http/loading_state.dart';
+import 'package:GiliGili/http/loading_state.dart';
 import '../models/bangumi/info.dart';
 import '../models/common/search_type.dart';
 import '../models/search/hot.dart';

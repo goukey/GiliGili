@@ -1,21 +1,21 @@
-import 'package:PiliPlus/common/widgets/image_save.dart';
-import 'package:PiliPlus/common/widgets/video_progress_indicator.dart';
-import 'package:PiliPlus/models/user/history.dart';
-import 'package:PiliPlus/pages/common/multi_select_controller.dart';
-import 'package:PiliPlus/pages/fav_search/controller.dart';
+import 'package:GiliGili/common/widgets/image_save.dart';
+import 'package:GiliGili/common/widgets/video_progress_indicator.dart';
+import 'package:GiliGili/models/user/history.dart';
+import 'package:GiliGili/pages/common/multi_select_controller.dart';
+import 'package:GiliGili/pages/fav_search/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/badge.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/http/search.dart';
-import 'package:PiliPlus/http/user.dart';
-import 'package:PiliPlus/http/video.dart';
-import 'package:PiliPlus/models/common/business_type.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
-import 'package:PiliPlus/utils/id_utils.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/badge.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/http/search.dart';
+import 'package:GiliGili/http/user.dart';
+import 'package:GiliGili/http/video.dart';
+import 'package:GiliGili/models/common/business_type.dart';
+import 'package:GiliGili/utils/feed_back.dart';
+import 'package:GiliGili/utils/id_utils.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HistoryItem extends StatelessWidget {

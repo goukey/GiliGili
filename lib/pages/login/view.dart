@@ -1,8 +1,8 @@
 import 'dart:ui';
 
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/spring_physics.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/spring_physics.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -10,9 +10,9 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:saver_gallery/saver_gallery.dart';
-import 'package:PiliPlus/utils/tv_focus_utils.dart';
-import 'package:PiliPlus/main.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
+import 'package:GiliGili/utils/tv_focus_utils.dart';
+import 'package:GiliGili/main.dart';
+import 'package:GiliGili/utils/feed_back.dart';
 
 import 'controller.dart';
 

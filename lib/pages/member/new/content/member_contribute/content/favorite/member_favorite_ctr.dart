@@ -1,10 +1,10 @@
-import 'package:PiliPlus/http/api.dart';
-import 'package:PiliPlus/http/init.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/http/member.dart';
-import 'package:PiliPlus/models/space_fav/datum.dart';
-import 'package:PiliPlus/models/space_fav/list.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
+import 'package:GiliGili/http/api.dart';
+import 'package:GiliGili/http/init.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/http/member.dart';
+import 'package:GiliGili/models/space_fav/datum.dart';
+import 'package:GiliGili/models/space_fav/list.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';

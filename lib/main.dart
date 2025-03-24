@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:PiliPlus/build_config.dart';
-import 'package:PiliPlus/pages/video/detail/view_v.dart';
-import 'package:PiliPlus/utils/cache_manage.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/build_config.dart';
+import 'package:GiliGili/pages/video/detail/view_v.dart';
+import 'package:GiliGili/utils/cache_manage.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flex_seed_scheme/flex_seed_scheme.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
@@ -13,18 +13,18 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:hive/hive.dart';
-import 'package:PiliPlus/common/widgets/custom_toast.dart';
-import 'package:PiliPlus/http/init.dart';
-import 'package:PiliPlus/models/common/color_type.dart';
-import 'package:PiliPlus/pages/video/detail/index.dart';
-import 'package:PiliPlus/router/app_pages.dart';
-import 'package:PiliPlus/pages/main/view.dart';
-import 'package:PiliPlus/services/service_locator.dart';
-import 'package:PiliPlus/utils/app_scheme.dart';
-import 'package:PiliPlus/utils/data.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/common/widgets/custom_toast.dart';
+import 'package:GiliGili/http/init.dart';
+import 'package:GiliGili/models/common/color_type.dart';
+import 'package:GiliGili/pages/video/detail/index.dart';
+import 'package:GiliGili/router/app_pages.dart';
+import 'package:GiliGili/pages/main/view.dart';
+import 'package:GiliGili/services/service_locator.dart';
+import 'package:GiliGili/utils/app_scheme.dart';
+import 'package:GiliGili/utils/data.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:media_kit/media_kit.dart'; // Provides [Player], [Media], [Playlist] etc.
-import 'package:PiliPlus/utils/recommend_filter.dart';
+import 'package:GiliGili/utils/recommend_filter.dart';
 import 'package:catcher_2/catcher_2.dart';
 import './services/loggeer.dart';
 

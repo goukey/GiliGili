@@ -1,9 +1,9 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/http/member.dart';
+import 'package:GiliGili/http/member.dart';
 
 class MemberSearchController extends GetxController
     with GetSingleTickerProviderStateMixin {

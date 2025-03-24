@@ -1,7 +1,7 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/http/video.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/http/video.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:get/get.dart';
 
 class HotController extends CommonController {

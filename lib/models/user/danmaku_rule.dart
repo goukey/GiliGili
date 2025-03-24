@@ -1,4 +1,4 @@
-import 'package:PiliPlus/grpc/dm/v1/dm.pb.dart';
+import 'package:GiliGili/grpc/dm/v1/dm.pb.dart';
 
 class RuleFilter {
   static final _regExp = RegExp(r'^/(.*)/$');

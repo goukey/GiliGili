@@ -1,22 +1,22 @@
 import 'dart:async';
 
-import 'package:PiliPlus/common/widgets/loading_widget.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/common/widgets/refresh_indicator.dart';
-import 'package:PiliPlus/common/widgets/self_sized_horizontal_list.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/pages/live/controller.dart';
-import 'package:PiliPlus/pages/live/widgets/live_item.dart';
-import 'package:PiliPlus/pages/live/widgets/live_item_follow.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/loading_widget.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/common/widgets/refresh_indicator.dart';
+import 'package:GiliGili/common/widgets/self_sized_horizontal_list.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/pages/live/controller.dart';
+import 'package:GiliGili/pages/live/widgets/live_item.dart';
+import 'package:GiliGili/pages/live/widgets/live_item_follow.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/skeleton/video_card_v.dart';
-import 'package:PiliPlus/common/widgets/http_error.dart';
-import 'package:PiliPlus/pages/home/index.dart';
-import 'package:PiliPlus/pages/main/index.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/skeleton/video_card_v.dart';
+import 'package:GiliGili/common/widgets/http_error.dart';
+import 'package:GiliGili/pages/home/index.dart';
+import 'package:GiliGili/pages/main/index.dart';
 
 import '../../utils/grid.dart';
 

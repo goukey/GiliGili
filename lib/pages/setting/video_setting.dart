@@ -1,4 +1,4 @@
-import 'package:PiliPlus/pages/setting/widgets/model.dart';
+import 'package:GiliGili/pages/setting/widgets/model.dart';
 import 'package:flutter/material.dart';
 
 class VideoSetting extends StatelessWidget {

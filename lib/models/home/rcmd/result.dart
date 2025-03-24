@@ -1,4 +1,4 @@
-import 'package:PiliPlus/utils/id_utils.dart';
+import 'package:GiliGili/utils/id_utils.dart';
 
 class RecVideoItemAppModel {
   RecVideoItemAppModel({

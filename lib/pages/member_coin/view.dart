@@ -1,11 +1,11 @@
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/loading_widget.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/pages/member_coin/controller.dart';
-import 'package:PiliPlus/pages/member_coin/widgets/item.dart';
-import 'package:PiliPlus/utils/grid.dart';
-import 'package:PiliPlus/utils/storage.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/loading_widget.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/pages/member_coin/controller.dart';
+import 'package:GiliGili/pages/member_coin/widgets/item.dart';
+import 'package:GiliGili/utils/grid.dart';
+import 'package:GiliGili/utils/storage.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

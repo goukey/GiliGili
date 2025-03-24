@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:PiliPlus/main.dart';
+import 'package:GiliGili/main.dart';
 
 /// TV平台焦点导航工具类
 class TvFocusUtils {

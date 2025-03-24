@@ -1,5 +1,5 @@
-import 'package:PiliPlus/grpc/dm/v1/dm.pb.dart';
-import 'package:PiliPlus/grpc/grpc_repo.dart';
+import 'package:GiliGili/grpc/dm/v1/dm.pb.dart';
+import 'package:GiliGili/grpc/grpc_repo.dart';
 import 'package:dio/dio.dart';
 import 'index.dart';
 

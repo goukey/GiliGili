@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
-import 'package:PiliPlus/grpc/app/card/v1/card.pb.dart' as card;
-import 'package:PiliPlus/grpc/grpc_repo.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/grpc/app/card/v1/card.pb.dart' as card;
+import 'package:GiliGili/grpc/grpc_repo.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import '../common/constants.dart';

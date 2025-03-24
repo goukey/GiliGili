@@ -1,16 +1,16 @@
 import 'dart:async';
 
-import 'package:PiliPlus/models/common/dynamic_badge_mode.dart';
-import 'package:PiliPlus/pages/main/index.dart';
-import 'package:PiliPlus/pages/mine/controller.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/models/common/dynamic_badge_mode.dart';
+import 'package:GiliGili/pages/main/index.dart';
+import 'package:GiliGili/pages/mine/controller.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/utils/feed_back.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import './controller.dart';
-import 'package:PiliPlus/common/widgets/spring_physics.dart';
+import 'package:GiliGili/common/widgets/spring_physics.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

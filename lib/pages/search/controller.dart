@@ -1,10 +1,10 @@
-import 'package:PiliPlus/common/widgets/dialog.dart';
-import 'package:PiliPlus/http/loading_state.dart';
+import 'package:GiliGili/common/widgets/dialog.dart';
+import 'package:GiliGili/http/loading_state.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/http/search.dart';
-import 'package:PiliPlus/models/search/suggest.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/http/search.dart';
+import 'package:GiliGili/models/search/suggest.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:get/get_rx/src/rx_workers/utils/debouncer.dart';
 
 class SSearchController extends GetxController {

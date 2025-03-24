@@ -1,17 +1,17 @@
 import 'dart:async';
 
-import 'package:PiliPlus/common/widgets/radio_widget.dart';
-import 'package:PiliPlus/http/member.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/common/widgets/radio_widget.dart';
+import 'package:GiliGili/http/member.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/pages/member/index.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/pages/member/index.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 import 'widgets/conis.dart';
 import 'widgets/profile.dart';

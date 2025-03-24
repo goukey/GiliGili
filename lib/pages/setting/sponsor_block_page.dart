@@ -1,13 +1,13 @@
 import 'dart:math';
 
-import 'package:PiliPlus/common/widgets/pair.dart';
-import 'package:PiliPlus/http/constants.dart';
-import 'package:PiliPlus/http/index.dart';
-import 'package:PiliPlus/models/common/sponsor_block/segment_type.dart';
-import 'package:PiliPlus/models/common/sponsor_block/skip_type.dart';
-import 'package:PiliPlus/pages/setting/slide_color_picker.dart';
-import 'package:PiliPlus/utils/storage.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/pair.dart';
+import 'package:GiliGili/http/constants.dart';
+import 'package:GiliGili/http/index.dart';
+import 'package:GiliGili/models/common/sponsor_block/segment_type.dart';
+import 'package:GiliGili/models/common/sponsor_block/skip_type.dart';
+import 'package:GiliGili/pages/setting/slide_color_picker.dart';
+import 'package:GiliGili/utils/storage.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';

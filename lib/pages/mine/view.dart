@@ -1,10 +1,10 @@
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/models/common/theme_type.dart';
-import 'package:PiliPlus/models/user/info.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/models/common/theme_type.dart';
+import 'package:GiliGili/models/user/info.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'controller.dart';
 

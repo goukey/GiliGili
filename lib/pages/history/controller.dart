@@ -1,12 +1,12 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/pages/common/multi_select_controller.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/pages/common/multi_select_controller.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/http/user.dart';
-import 'package:PiliPlus/models/user/history.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/http/user.dart';
+import 'package:GiliGili/models/user/history.dart';
+import 'package:GiliGili/utils/storage.dart';
 
 class HistoryController extends MultiSelectController {
   RxBool pauseStatus = false.obs;

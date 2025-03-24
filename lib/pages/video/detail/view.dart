@@ -2,26 +2,26 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/list_sheet.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/main.dart';
-import 'package:PiliPlus/models/bangumi/info.dart';
-import 'package:PiliPlus/models/common/reply_type.dart';
-import 'package:PiliPlus/pages/bangumi/introduction/widgets/intro_detail.dart'
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/list_sheet.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/main.dart';
+import 'package:GiliGili/models/bangumi/info.dart';
+import 'package:GiliGili/models/common/reply_type.dart';
+import 'package:GiliGili/pages/bangumi/introduction/widgets/intro_detail.dart'
     as bangumi;
-import 'package:PiliPlus/pages/video/detail/introduction/widgets/intro_detail.dart'
+import 'package:GiliGili/pages/video/detail/introduction/widgets/intro_detail.dart'
     as video;
-import 'package:PiliPlus/pages/video/detail/introduction/widgets/page.dart';
-import 'package:PiliPlus/pages/video/detail/introduction/widgets/season.dart';
-import 'package:PiliPlus/pages/video/detail/member/horizontal_member_page.dart';
-import 'package:PiliPlus/pages/video/detail/reply_reply/view.dart';
-import 'package:PiliPlus/pages/video/detail/view_point/view_points_page.dart';
-import 'package:PiliPlus/pages/video/detail/widgets/ai_detail.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/global_data.dart';
-import 'package:PiliPlus/utils/id_utils.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/pages/video/detail/introduction/widgets/page.dart';
+import 'package:GiliGili/pages/video/detail/introduction/widgets/season.dart';
+import 'package:GiliGili/pages/video/detail/member/horizontal_member_page.dart';
+import 'package:GiliGili/pages/video/detail/reply_reply/view.dart';
+import 'package:GiliGili/pages/video/detail/view_point/view_points_page.dart';
+import 'package:GiliGili/pages/video/detail/widgets/ai_detail.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/global_data.dart';
+import 'package:GiliGili/utils/id_utils.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:auto_orientation/auto_orientation.dart';
 import 'package:easy_debounce/easy_throttle.dart';
 import 'package:floating/floating.dart';
@@ -31,25 +31,25 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/models/common/search_type.dart';
-import 'package:PiliPlus/pages/bangumi/introduction/index.dart';
-import 'package:PiliPlus/pages/danmaku/view.dart';
-import 'package:PiliPlus/pages/video/detail/reply/index.dart';
-import 'package:PiliPlus/pages/video/detail/controller.dart';
-import 'package:PiliPlus/pages/video/detail/introduction/index.dart';
-import 'package:PiliPlus/pages/video/detail/related/index.dart';
-import 'package:PiliPlus/plugin/pl_player/index.dart';
-import 'package:PiliPlus/plugin/pl_player/models/play_repeat.dart';
-import 'package:PiliPlus/services/service_locator.dart';
-import 'package:PiliPlus/utils/storage.dart';
-import 'package:PiliPlus/models/bangumi/info.dart' as bangumi;
-import 'package:PiliPlus/models/video_detail_res.dart' as video;
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/models/common/search_type.dart';
+import 'package:GiliGili/pages/bangumi/introduction/index.dart';
+import 'package:GiliGili/pages/danmaku/view.dart';
+import 'package:GiliGili/pages/video/detail/reply/index.dart';
+import 'package:GiliGili/pages/video/detail/controller.dart';
+import 'package:GiliGili/pages/video/detail/introduction/index.dart';
+import 'package:GiliGili/pages/video/detail/related/index.dart';
+import 'package:GiliGili/plugin/pl_player/index.dart';
+import 'package:GiliGili/plugin/pl_player/models/play_repeat.dart';
+import 'package:GiliGili/services/service_locator.dart';
+import 'package:GiliGili/utils/storage.dart';
+import 'package:GiliGili/models/bangumi/info.dart' as bangumi;
+import 'package:GiliGili/models/video_detail_res.dart' as video;
 import 'package:screen_brightness/screen_brightness.dart';
 
 import '../../../services/shutdown_timer_service.dart';
 import 'widgets/header_control.dart';
-import 'package:PiliPlus/common/widgets/spring_physics.dart';
+import 'package:GiliGili/common/widgets/spring_physics.dart';
 
 class VideoDetailPage extends StatefulWidget {
   const VideoDetailPage({super.key});

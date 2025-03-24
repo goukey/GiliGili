@@ -1,18 +1,18 @@
 import 'dart:async';
 
-import 'package:PiliPlus/common/widgets/segment_progress_bar.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/common/widgets/segment_progress_bar.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:nil/nil.dart';
-import 'package:PiliPlus/plugin/pl_player/index.dart'
+import 'package:GiliGili/plugin/pl_player/index.dart'
     show
         PlPlayerController,
         buildSeekPreviewWidget,
         buildDmChart,
         buildViewPointWidget;
-import 'package:PiliPlus/utils/feed_back.dart';
+import 'package:GiliGili/utils/feed_back.dart';
 
 import '../../../common/widgets/audio_video_progress_bar.dart';
 

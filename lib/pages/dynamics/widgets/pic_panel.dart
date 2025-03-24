@@ -1,4 +1,4 @@
-import 'package:PiliPlus/common/widgets/imageview.dart';
+import 'package:GiliGili/common/widgets/imageview.dart';
 import 'package:flutter/material.dart';
 
 Widget picWidget(item, context, callback) {

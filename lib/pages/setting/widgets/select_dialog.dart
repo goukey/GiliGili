@@ -1,10 +1,10 @@
-import 'package:PiliPlus/http/constants.dart';
-import 'package:PiliPlus/http/video.dart';
-import 'package:PiliPlus/models/video/play/CDN.dart';
-import 'package:PiliPlus/models/video/play/url.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/storage.dart';
-import 'package:PiliPlus/utils/video_utils.dart';
+import 'package:GiliGili/http/constants.dart';
+import 'package:GiliGili/http/video.dart';
+import 'package:GiliGili/models/video/play/CDN.dart';
+import 'package:GiliGili/models/video/play/url.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/storage.dart';
+import 'package:GiliGili/utils/video_utils.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';

@@ -1,14 +1,14 @@
 import 'dart:async';
 
-import 'package:PiliPlus/http/loading_state.dart';
+import 'package:GiliGili/http/loading_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/models/user/fav_folder.dart';
-import 'package:PiliPlus/pages/main/index.dart';
-import 'package:PiliPlus/pages/media/index.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/models/user/fav_folder.dart';
+import 'package:GiliGili/pages/main/index.dart';
+import 'package:GiliGili/pages/media/index.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 class MediaPage extends StatefulWidget {
   const MediaPage({super.key});

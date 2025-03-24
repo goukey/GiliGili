@@ -1,11 +1,11 @@
-import 'package:PiliPlus/common/widgets/loading_widget.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/models/video/reply/emote.dart';
+import 'package:GiliGili/common/widgets/loading_widget.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/models/video/reply/emote.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../common/widgets/network_img_layer.dart';
 import 'controller.dart';
-import 'package:PiliPlus/common/widgets/spring_physics.dart';
+import 'package:GiliGili/common/widgets/spring_physics.dart';
 
 class EmotePanel extends StatefulWidget {
   final Function onChoose;

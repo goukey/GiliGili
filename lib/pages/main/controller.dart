@@ -1,18 +1,18 @@
 import 'dart:async';
 
-import 'package:PiliPlus/grpc/grpc_repo.dart';
-import 'package:PiliPlus/http/api.dart';
-import 'package:PiliPlus/http/common.dart';
-import 'package:PiliPlus/http/init.dart';
-import 'package:PiliPlus/pages/dynamics/view.dart';
-import 'package:PiliPlus/pages/home/view.dart';
-import 'package:PiliPlus/pages/media/view.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/global_data.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/grpc/grpc_repo.dart';
+import 'package:GiliGili/http/api.dart';
+import 'package:GiliGili/http/common.dart';
+import 'package:GiliGili/http/init.dart';
+import 'package:GiliGili/pages/dynamics/view.dart';
+import 'package:GiliGili/pages/home/view.dart';
+import 'package:GiliGili/pages/media/view.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/global_data.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/utils/storage.dart';
 import '../../models/common/dynamic_badge_mode.dart';
 import '../../models/common/nav_bar_config.dart';
 

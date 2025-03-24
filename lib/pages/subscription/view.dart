@@ -1,12 +1,12 @@
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/skeleton/video_card_h.dart';
-import 'package:PiliPlus/common/widgets/refresh_indicator.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/pages/subscription/widgets/item.dart';
-import 'package:PiliPlus/utils/grid.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/skeleton/video_card_h.dart';
+import 'package:GiliGili/common/widgets/refresh_indicator.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/pages/subscription/widgets/item.dart';
+import 'package:GiliGili/utils/grid.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/http_error.dart';
+import 'package:GiliGili/common/widgets/http_error.dart';
 import 'controller.dart';
 
 class SubPage extends StatefulWidget {

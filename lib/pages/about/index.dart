@@ -1,17 +1,17 @@
 import 'dart:convert';
 
-import 'package:PiliPlus/build_config.dart';
-import 'package:PiliPlus/services/loggeer.dart';
-import 'package:PiliPlus/utils/accounts/account.dart';
-import 'package:PiliPlus/utils/login.dart';
+import 'package:GiliGili/build_config.dart';
+import 'package:GiliGili/services/loggeer.dart';
+import 'package:GiliGili/utils/accounts/account.dart';
+import 'package:GiliGili/utils/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:PiliPlus/models/github/latest.dart';
-import 'package:PiliPlus/utils/storage.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/models/github/latest.dart';
+import 'package:GiliGili/utils/storage.dart';
+import 'package:GiliGili/utils/utils.dart';
 import '../../utils/cache_manage.dart';
 import '../mine/controller.dart';
 

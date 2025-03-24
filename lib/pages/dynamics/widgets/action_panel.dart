@@ -1,12 +1,12 @@
-import 'package:PiliPlus/pages/dynamics/repost_dyn_panel.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/pages/dynamics/repost_dyn_panel.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:PiliPlus/http/dynamics.dart';
-import 'package:PiliPlus/models/dynamics/result.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
+import 'package:GiliGili/http/dynamics.dart';
+import 'package:GiliGili/models/dynamics/result.dart';
+import 'package:GiliGili/utils/feed_back.dart';
 
 class ActionPanel extends StatefulWidget {
   const ActionPanel({

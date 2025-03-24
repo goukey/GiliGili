@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:PiliPlus/models/msg/account.dart';
+import 'package:GiliGili/models/msg/account.dart';
 
 class SessionDataModel {
   SessionDataModel({

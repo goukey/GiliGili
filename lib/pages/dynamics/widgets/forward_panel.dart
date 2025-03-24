@@ -1,13 +1,13 @@
 // 转发
-import 'package:PiliPlus/common/widgets/badge.dart';
-import 'package:PiliPlus/common/widgets/image_save.dart';
-import 'package:PiliPlus/common/widgets/imageview.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/common/widgets/badge.dart';
+import 'package:GiliGili/common/widgets/image_save.dart';
+import 'package:GiliGili/common/widgets/imageview.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 import '../../../models/dynamics/result.dart';
 import 'additional_panel.dart';

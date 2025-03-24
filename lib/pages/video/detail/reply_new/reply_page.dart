@@ -1,16 +1,16 @@
 import 'dart:async';
 
-import 'package:PiliPlus/http/video.dart';
-import 'package:PiliPlus/main.dart';
-import 'package:PiliPlus/pages/common/common_publish_page.dart';
-import 'package:PiliPlus/pages/emote/view.dart';
-import 'package:PiliPlus/pages/video/detail/reply_new/toolbar_icon_button.dart';
-import 'package:PiliPlus/utils/global_data.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/http/video.dart';
+import 'package:GiliGili/main.dart';
+import 'package:GiliGili/pages/common/common_publish_page.dart';
+import 'package:GiliGili/pages/emote/view.dart';
+import 'package:GiliGili/pages/video/detail/reply_new/toolbar_icon_button.dart';
+import 'package:GiliGili/utils/global_data.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/models/common/reply_type.dart';
+import 'package:GiliGili/models/common/reply_type.dart';
 
 class ReplyPage extends CommonPublishPage {
   final int? oid;

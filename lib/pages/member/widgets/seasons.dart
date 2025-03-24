@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/badge.dart';
-import 'package:PiliPlus/models/member/seasons.dart';
-import 'package:PiliPlus/pages/member_seasons/widgets/item.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/badge.dart';
+import 'package:GiliGili/models/member/seasons.dart';
+import 'package:GiliGili/pages/member_seasons/widgets/item.dart';
 
 import '../../../utils/grid.dart';
 

@@ -1,13 +1,13 @@
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/http_error.dart';
-import 'package:PiliPlus/common/widgets/loading_widget.dart';
-import 'package:PiliPlus/common/widgets/self_sized_horizontal_list.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/pages/bangumi/pgc_index/pgc_index_controller.dart';
-import 'package:PiliPlus/pages/bangumi/widgets/bangumi_card_v_pgc_index.dart';
-import 'package:PiliPlus/pages/search/widgets/search_text.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/grid.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/http_error.dart';
+import 'package:GiliGili/common/widgets/loading_widget.dart';
+import 'package:GiliGili/common/widgets/self_sized_horizontal_list.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/pages/bangumi/pgc_index/pgc_index_controller.dart';
+import 'package:GiliGili/pages/bangumi/widgets/bangumi_card_v_pgc_index.dart';
+import 'package:GiliGili/pages/search/widgets/search_text.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/grid.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Condition;
 

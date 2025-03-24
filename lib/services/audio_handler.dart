@@ -1,9 +1,9 @@
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:audio_service/audio_service.dart';
-import 'package:PiliPlus/models/bangumi/info.dart';
-import 'package:PiliPlus/models/video_detail_res.dart';
-import 'package:PiliPlus/plugin/pl_player/index.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/models/bangumi/info.dart';
+import 'package:GiliGili/models/video_detail_res.dart';
+import 'package:GiliGili/plugin/pl_player/index.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:get/get_utils/get_utils.dart';
 
 Future<VideoPlayerServiceHandler> initAudioService() async {

@@ -1,24 +1,24 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/common/widgets/tabs.dart';
-import 'package:PiliPlus/pages/mine/controller.dart';
-import 'package:PiliPlus/utils/app_scheme.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/common/widgets/tabs.dart';
+import 'package:GiliGili/pages/mine/controller.dart';
+import 'package:GiliGili/utils/app_scheme.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/models/common/dynamic_badge_mode.dart';
-import 'package:PiliPlus/pages/dynamics/index.dart';
-import 'package:PiliPlus/pages/home/index.dart';
-import 'package:PiliPlus/utils/event_bus.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/models/common/dynamic_badge_mode.dart';
+import 'package:GiliGili/pages/dynamics/index.dart';
+import 'package:GiliGili/pages/home/index.dart';
+import 'package:GiliGili/utils/event_bus.dart';
+import 'package:GiliGili/utils/feed_back.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import './controller.dart';
-import 'package:PiliPlus/main.dart';
+import 'package:GiliGili/main.dart';
 
 class MainApp extends StatefulWidget {
   const MainApp({Key? key}) : super(key: key);

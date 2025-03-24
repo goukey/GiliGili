@@ -1,5 +1,5 @@
-import 'package:PiliPlus/pages/search/widgets/search_text.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/pages/search/widgets/search_text.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
@@ -10,7 +10,7 @@ import '../../http/video.dart';
 import '../../models/home/rcmd/result.dart';
 import '../../pages/mine/controller.dart';
 import '../../utils/storage.dart';
-import 'package:PiliPlus/models/space_archive/item.dart';
+import 'package:GiliGili/models/space_archive/item.dart';
 
 class VideoCustomAction {
   String title;

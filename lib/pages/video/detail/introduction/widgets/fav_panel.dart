@@ -1,8 +1,8 @@
-import 'package:PiliPlus/models/user/fav_folder.dart';
+import 'package:GiliGili/models/user/fav_folder.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/http_error.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
+import 'package:GiliGili/common/widgets/http_error.dart';
+import 'package:GiliGili/utils/feed_back.dart';
 
 import '../../../../../utils/utils.dart';
 

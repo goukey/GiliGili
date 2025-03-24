@@ -1,9 +1,9 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/models/user/fav_folder.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/http/user.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/models/user/fav_folder.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/http/user.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/storage.dart';
 
 class FavController extends CommonController {
   late final dynamic mid = GStorage.userInfo.get('userInfoCache')?.mid;

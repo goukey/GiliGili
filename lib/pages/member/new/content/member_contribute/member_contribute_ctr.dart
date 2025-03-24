@@ -1,10 +1,10 @@
 import 'dart:math';
 
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/models/space/tab2.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/pages/member/new/controller.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/models/space/tab2.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/pages/member/new/controller.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

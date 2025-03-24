@@ -1,5 +1,5 @@
-import 'package:PiliPlus/utils/em.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/utils/em.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 class SearchVideoModel {
   SearchVideoModel({

@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
-import 'package:PiliPlus/http/init.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/http/init.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';

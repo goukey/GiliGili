@@ -1,4 +1,4 @@
-import 'package:PiliPlus/models/home/rcmd_item.dart';
+import 'package:GiliGili/models/home/rcmd_item.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'rcmd_res.g.dart';

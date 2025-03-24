@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:PiliPlus/common/widgets/icon_button.dart';
-import 'package:PiliPlus/http/danmaku.dart';
-import 'package:PiliPlus/main.dart';
-import 'package:PiliPlus/pages/common/common_publish_page.dart';
-import 'package:PiliPlus/pages/setting/slide_color_picker.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/common/widgets/icon_button.dart';
+import 'package:GiliGili/http/danmaku.dart';
+import 'package:GiliGili/main.dart';
+import 'package:GiliGili/pages/common/common_publish_page.dart';
+import 'package:GiliGili/pages/setting/slide_color_picker.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:canvas_danmaku/models/danmaku_content_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

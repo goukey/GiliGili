@@ -1,4 +1,4 @@
-import 'package:PiliPlus/models/video/reply/item.dart';
+import 'package:GiliGili/models/video/reply/item.dart';
 
 import 'config.dart';
 import 'page.dart';

@@ -1,11 +1,11 @@
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/loading_widget.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/pages/member/new/content/member_contribute/content/season_series/controller.dart';
-import 'package:PiliPlus/pages/member/new/content/member_contribute/content/season_series/widget/season_series_card.dart';
-import 'package:PiliPlus/pages/member/new/content/member_contribute/content/video/member_video.dart';
-import 'package:PiliPlus/pages/member/new/content/member_contribute/member_contribute.dart';
-import 'package:PiliPlus/utils/grid.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/loading_widget.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/pages/member/new/content/member_contribute/content/season_series/controller.dart';
+import 'package:GiliGili/pages/member/new/content/member_contribute/content/season_series/widget/season_series_card.dart';
+import 'package:GiliGili/pages/member/new/content/member_contribute/content/video/member_video.dart';
+import 'package:GiliGili/pages/member/new/content/member_contribute/member_contribute.dart';
+import 'package:GiliGili/utils/grid.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

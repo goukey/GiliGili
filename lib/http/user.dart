@@ -1,5 +1,5 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/models/video/later.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/models/video/later.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import '../common/constants.dart';

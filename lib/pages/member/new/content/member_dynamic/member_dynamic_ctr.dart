@@ -1,7 +1,7 @@
-import 'package:PiliPlus/grpc/app/dynamic/v2/dynamic.pb.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/http/member.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
+import 'package:GiliGili/grpc/app/dynamic/v2/dynamic.pb.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/http/member.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
 
 class MemberDynamicCtr extends CommonController {
   MemberDynamicCtr({

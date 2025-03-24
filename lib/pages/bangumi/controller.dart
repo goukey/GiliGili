@@ -1,12 +1,12 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/models/bangumi/list.dart';
-import 'package:PiliPlus/models/common/tab_type.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/models/bangumi/list.dart';
+import 'package:GiliGili/models/common/tab_type.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/http/bangumi.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/http/bangumi.dart';
+import 'package:GiliGili/utils/storage.dart';
 
 class BangumiController extends CommonController {
   BangumiController({required this.tabType});

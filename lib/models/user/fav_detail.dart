@@ -1,5 +1,5 @@
-import 'package:PiliPlus/models/model_owner.dart';
-import 'package:PiliPlus/models/user/fav_folder.dart';
+import 'package:GiliGili/models/model_owner.dart';
+import 'package:GiliGili/models/user/fav_folder.dart';
 
 class FavDetailData {
   FavDetailData({

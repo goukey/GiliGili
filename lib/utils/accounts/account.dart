@@ -1,5 +1,5 @@
-import 'package:PiliPlus/utils/storage.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/utils/storage.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:hive/hive.dart';
 

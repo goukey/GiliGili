@@ -1,12 +1,12 @@
-import 'package:PiliPlus/common/widgets/http_error.dart';
-import 'package:PiliPlus/common/widgets/refresh_indicator.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/pages/fav_search/view.dart' show SearchType;
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/common/widgets/http_error.dart';
+import 'package:GiliGili/common/widgets/refresh_indicator.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/pages/fav_search/view.dart' show SearchType;
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/skeleton/video_card_h.dart';
-import 'package:PiliPlus/pages/history/index.dart';
+import 'package:GiliGili/common/skeleton/video_card_h.dart';
+import 'package:GiliGili/pages/history/index.dart';
 
 import '../../common/constants.dart';
 import '../../utils/grid.dart';

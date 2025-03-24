@@ -1,6 +1,6 @@
-import 'package:PiliPlus/common/widgets/loading_widget.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/models/search/suggest.dart';
+import 'package:GiliGili/common/widgets/loading_widget.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/models/search/suggest.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'controller.dart';

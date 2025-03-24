@@ -1,5 +1,5 @@
 // 内容
-import 'package:PiliPlus/common/widgets/imageview.dart';
+import 'package:GiliGili/common/widgets/imageview.dart';
 import 'package:flutter/material.dart';
 
 import 'rich_node_panel.dart';

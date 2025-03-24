@@ -1,7 +1,7 @@
-import 'package:PiliPlus/pages/rank/zone/index.dart';
+import 'package:GiliGili/pages/rank/zone/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/models/common/rank_type.dart';
+import 'package:GiliGili/models/common/rank_type.dart';
 
 class RankController extends GetxController with GetTickerProviderStateMixin {
   bool flag = false;

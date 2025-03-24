@@ -1,19 +1,19 @@
 import 'dart:async';
 
-import 'package:PiliPlus/common/widgets/refresh_indicator.dart';
-import 'package:PiliPlus/common/widgets/video_card_h.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/models/common/tab_type.dart';
-import 'package:PiliPlus/pages/rank/view.dart';
+import 'package:GiliGili/common/widgets/refresh_indicator.dart';
+import 'package:GiliGili/common/widgets/video_card_h.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/models/common/tab_type.dart';
+import 'package:GiliGili/pages/rank/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/skeleton/video_card_h.dart';
-import 'package:PiliPlus/common/widgets/http_error.dart';
-import 'package:PiliPlus/pages/home/index.dart';
-import 'package:PiliPlus/pages/hot/controller.dart';
-import 'package:PiliPlus/pages/main/index.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/skeleton/video_card_h.dart';
+import 'package:GiliGili/common/widgets/http_error.dart';
+import 'package:GiliGili/pages/home/index.dart';
+import 'package:GiliGili/pages/hot/controller.dart';
+import 'package:GiliGili/pages/main/index.dart';
 
 import '../../utils/grid.dart';
 

@@ -1,7 +1,7 @@
-import 'package:PiliPlus/grpc/app/dynamic/v2/dynamic.pb.dart';
-import 'package:PiliPlus/pages/dynamics/widgets/author_panel_grpc.dart';
-import 'package:PiliPlus/pages/dynamics/widgets/content_panel_grpc.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/grpc/app/dynamic/v2/dynamic.pb.dart';
+import 'package:GiliGili/pages/dynamics/widgets/author_panel_grpc.dart';
+import 'package:GiliGili/pages/dynamics/widgets/content_panel_grpc.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class DynamicPanelGrpc extends StatelessWidget {

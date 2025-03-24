@@ -3,8 +3,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/models/common/tab_type.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/models/common/tab_type.dart';
+import 'package:GiliGili/utils/storage.dart';
 import '../../http/index.dart';
 import '../../utils/feed_back.dart';
 import '../mine/view.dart';

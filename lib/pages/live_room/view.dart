@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
 
-import 'package:PiliPlus/http/live.dart';
-import 'package:PiliPlus/pages/live_room/widgets/chat.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/http/live.dart';
+import 'package:GiliGili/pages/live_room/widgets/chat.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:canvas_danmaku/canvas_danmaku.dart';
 import 'package:floating/floating.dart';
@@ -13,8 +13,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/plugin/pl_player/index.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/plugin/pl_player/index.dart';
 import 'package:screen_brightness/screen_brightness.dart';
 
 import '../../utils/storage.dart';

@@ -1,20 +1,20 @@
-import 'package:PiliPlus/common/widgets/custom_sliver_persistent_header_delegate.dart';
-import 'package:PiliPlus/common/widgets/loading_widget.dart';
-import 'package:PiliPlus/common/widgets/refresh_indicator.dart';
-import 'package:PiliPlus/common/widgets/http_error.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/models/common/reply_sort_type.dart';
-import 'package:PiliPlus/pages/video/detail/reply/widgets/reply_item.dart';
-import 'package:PiliPlus/pages/video/detail/reply/widgets/reply_item_grpc.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/global_data.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/common/widgets/custom_sliver_persistent_header_delegate.dart';
+import 'package:GiliGili/common/widgets/loading_widget.dart';
+import 'package:GiliGili/common/widgets/refresh_indicator.dart';
+import 'package:GiliGili/common/widgets/http_error.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/models/common/reply_sort_type.dart';
+import 'package:GiliGili/pages/video/detail/reply/widgets/reply_item.dart';
+import 'package:GiliGili/pages/video/detail/reply/widgets/reply_item_grpc.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/global_data.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/skeleton/video_reply.dart';
-import 'package:PiliPlus/models/common/reply_type.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
+import 'package:GiliGili/common/skeleton/video_reply.dart';
+import 'package:GiliGili/models/common/reply_type.dart';
+import 'package:GiliGili/utils/feed_back.dart';
 import 'controller.dart';
 
 class VideoReplyPanel extends StatefulWidget {

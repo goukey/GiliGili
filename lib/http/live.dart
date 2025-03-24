@@ -1,7 +1,7 @@
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/models/live/danmu_info.dart';
-import 'package:PiliPlus/models/live/follow.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/models/live/danmu_info.dart';
+import 'package:GiliGili/models/live/follow.dart';
 import 'package:dio/dio.dart';
 import '../models/live/item.dart';
 import '../models/live/room_info.dart';

@@ -1,11 +1,11 @@
-import 'package:PiliPlus/pages/dynamics/controller.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/pages/dynamics/controller.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/models/dynamics/up.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/models/dynamics/up.dart';
+import 'package:GiliGili/utils/feed_back.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 class UpPanel extends StatefulWidget {
   final DynamicsController dynamicsController;

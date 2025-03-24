@@ -1,25 +1,25 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:PiliPlus/grpc/app/main/community/reply/v1/reply.pb.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/http/reply.dart';
-import 'package:PiliPlus/models/common/reply_type.dart';
-import 'package:PiliPlus/models/video/reply/data.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/pages/video/detail/reply_new/reply_page.dart';
-import 'package:PiliPlus/utils/accounts/account.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/global_data.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/grpc/app/main/community/reply/v1/reply.pb.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/http/reply.dart';
+import 'package:GiliGili/models/common/reply_type.dart';
+import 'package:GiliGili/models/video/reply/data.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/pages/video/detail/reply_new/reply_page.dart';
+import 'package:GiliGili/utils/accounts/account.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/global_data.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:easy_debounce/easy_throttle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/models/common/reply_sort_type.dart';
-import 'package:PiliPlus/models/video/reply/item.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/models/common/reply_sort_type.dart';
+import 'package:GiliGili/models/video/reply/item.dart';
+import 'package:GiliGili/utils/feed_back.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:get/get_navigation/src/dialog/dialog_route.dart';
 
 abstract class ReplyController extends CommonController {

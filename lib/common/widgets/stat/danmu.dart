@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 Widget statDanMu({
   required BuildContext context,

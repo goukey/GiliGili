@@ -1,9 +1,9 @@
-import 'package:PiliPlus/common/widgets/image_save.dart';
-import 'package:PiliPlus/common/widgets/stat/danmu.dart';
-import 'package:PiliPlus/common/widgets/stat/view.dart';
-import 'package:PiliPlus/common/widgets/video_popup_menu.dart';
-import 'package:PiliPlus/common/widgets/video_progress_indicator.dart';
-import 'package:PiliPlus/models/space_archive/item.dart';
+import 'package:GiliGili/common/widgets/image_save.dart';
+import 'package:GiliGili/common/widgets/stat/danmu.dart';
+import 'package:GiliGili/common/widgets/stat/view.dart';
+import 'package:GiliGili/common/widgets/video_popup_menu.dart';
+import 'package:GiliGili/common/widgets/video_progress_indicator.dart';
+import 'package:GiliGili/models/space_archive/item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import '../../utils/utils.dart';

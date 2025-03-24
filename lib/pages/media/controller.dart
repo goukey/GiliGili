@@ -1,9 +1,9 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/http/user.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/http/user.dart';
+import 'package:GiliGili/utils/storage.dart';
 
 class MediaController extends CommonController {
   List list = [

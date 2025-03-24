@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/badge.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/models/dynamics/result.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/badge.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/models/dynamics/result.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 import 'rich_node_panel.dart';
 

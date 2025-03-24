@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:PiliPlus/utils/accounts/account.dart';
+import 'package:GiliGili/utils/accounts/account.dart';
 import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:encrypt/encrypt.dart';

@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/utils/grid.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/utils/grid.dart';
 import 'package:easy_debounce/easy_throttle.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/skeleton/video_card_h.dart';
-import 'package:PiliPlus/common/widgets/http_error.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/common/skeleton/video_card_h.dart';
+import 'package:GiliGili/common/widgets/http_error.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
 
 import '../../models/user/sub_folder.dart';
 import '../../utils/utils.dart';

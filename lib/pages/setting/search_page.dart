@@ -1,6 +1,6 @@
-import 'package:PiliPlus/common/widgets/http_error.dart';
-import 'package:PiliPlus/pages/setting/widgets/model.dart';
-import 'package:PiliPlus/utils/grid.dart';
+import 'package:GiliGili/common/widgets/http_error.dart';
+import 'package:GiliGili/pages/setting/widgets/model.dart';
+import 'package:GiliGili/utils/grid.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';

@@ -1,11 +1,11 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/pages/search_result/controller.dart';
-import 'package:PiliPlus/utils/app_scheme.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/pages/search_result/controller.dart';
+import 'package:GiliGili/utils/app_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/http/search.dart';
-import 'package:PiliPlus/models/common/search_type.dart';
+import 'package:GiliGili/http/search.dart';
+import 'package:GiliGili/models/common/search_type.dart';
 
 class SearchPanelController extends CommonController {
   SearchPanelController({

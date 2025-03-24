@@ -1,12 +1,12 @@
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/pages/search/widgets/search_text.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/pages/search/widgets/search_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/stat/danmu.dart';
-import 'package:PiliPlus/common/widgets/stat/view.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/stat/danmu.dart';
+import 'package:GiliGili/common/widgets/stat/view.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 @Deprecated('deprecated')
 class IntroDetail extends StatelessWidget {

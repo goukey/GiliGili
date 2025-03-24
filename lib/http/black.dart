@@ -1,4 +1,4 @@
-import 'package:PiliPlus/http/loading_state.dart';
+import 'package:GiliGili/http/loading_state.dart';
 
 import '../models/user/black.dart';
 import 'index.dart';

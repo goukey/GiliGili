@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/icon_button.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/http/video.dart';
-import 'package:PiliPlus/models/bangumi/info.dart' as bangumi;
-import 'package:PiliPlus/models/video_detail_res.dart' as video;
-import 'package:PiliPlus/pages/common/common_slide_page.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/icon_button.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/http/video.dart';
+import 'package:GiliGili/models/bangumi/info.dart' as bangumi;
+import 'package:GiliGili/models/video_detail_res.dart' as video;
+import 'package:GiliGili/pages/common/common_slide_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -15,7 +15,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../../utils/storage.dart';
 import '../../utils/utils.dart';
-import 'package:PiliPlus/common/widgets/spring_physics.dart';
+import 'package:GiliGili/common/widgets/spring_physics.dart';
 
 class ListSheetContent extends CommonSlidePage {
   const ListSheetContent({

@@ -1,12 +1,12 @@
-import 'package:PiliPlus/common/widgets/image_save.dart';
+import 'package:GiliGili/common/widgets/image_save.dart';
 import 'package:flutter/material.dart';
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/stat/danmu.dart';
-import 'package:PiliPlus/common/widgets/stat/view.dart';
-import 'package:PiliPlus/http/search.dart';
-import 'package:PiliPlus/models/common/search_type.dart';
-import 'package:PiliPlus/utils/utils.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/stat/danmu.dart';
+import 'package:GiliGili/common/widgets/stat/view.dart';
+import 'package:GiliGili/http/search.dart';
+import 'package:GiliGili/models/common/search_type.dart';
+import 'package:GiliGili/utils/utils.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
 import '../../../common/widgets/badge.dart';
 import '../../../models/user/sub_detail.dart';
 

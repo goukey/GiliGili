@@ -1,4 +1,4 @@
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:hive/hive.dart';
 
 import '../storage.dart' show AccountType;

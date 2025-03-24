@@ -1,8 +1,8 @@
-import 'package:PiliPlus/http/bangumi.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/models/bangumi/pgc_index/condition.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/http/bangumi.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/models/bangumi/pgc_index/condition.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:get/get.dart' hide Condition;
 
 class PgcIndexController extends CommonController {

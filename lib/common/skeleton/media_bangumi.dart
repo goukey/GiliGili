@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:PiliPlus/common/constants.dart';
+import 'package:GiliGili/common/constants.dart';
 
 import 'skeleton.dart';
 

@@ -1,5 +1,5 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

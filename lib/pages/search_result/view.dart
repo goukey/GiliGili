@@ -1,11 +1,11 @@
-import 'package:PiliPlus/pages/search/controller.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/pages/search/controller.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/models/common/search_type.dart';
-import 'package:PiliPlus/pages/search_panel/index.dart';
+import 'package:GiliGili/models/common/search_type.dart';
+import 'package:GiliGili/pages/search_panel/index.dart';
 import 'controller.dart';
-import 'package:PiliPlus/common/widgets/spring_physics.dart';
+import 'package:GiliGili/common/widgets/spring_physics.dart';
 
 class SearchResultPage extends StatefulWidget {
   const SearchResultPage({super.key});

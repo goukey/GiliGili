@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:PiliPlus/models/dynamics/article_content_model.dart';
-import 'package:PiliPlus/utils/url_utils.dart';
+import 'package:GiliGili/models/dynamics/article_content_model.dart';
+import 'package:GiliGili/utils/url_utils.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:html/dom.dart' as dom;

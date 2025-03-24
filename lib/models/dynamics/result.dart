@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/utils/storage.dart';
 
 class DynamicsDataModel {
   DynamicsDataModel({

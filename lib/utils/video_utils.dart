@@ -1,12 +1,12 @@
-import 'package:PiliPlus/models/video/play/CDN.dart';
-import 'package:PiliPlus/models/video/play/url.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/models/video/play/CDN.dart';
+import 'package:GiliGili/models/video/play/url.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:flutter/material.dart';
-import 'package:PiliPlus/main.dart';
-import 'package:PiliPlus/models/common/sponsor_block/skip_type.dart';
-import 'package:PiliPlus/models/video/play/quality.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/main.dart';
+import 'package:GiliGili/models/common/sponsor_block/skip_type.dart';
+import 'package:GiliGili/models/video/play/quality.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 

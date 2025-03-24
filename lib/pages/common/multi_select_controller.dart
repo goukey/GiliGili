@@ -1,7 +1,7 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/utils/extension.dart';
 
 abstract class MultiSelectController extends CommonController {
   RxBool enableMultiSelect = false.obs;

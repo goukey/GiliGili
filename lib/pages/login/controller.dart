@@ -1,19 +1,19 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/icon_button.dart';
-import 'package:PiliPlus/common/widgets/radio_widget.dart';
-import 'package:PiliPlus/http/init.dart';
-import 'package:PiliPlus/utils/accounts/account.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/icon_button.dart';
+import 'package:GiliGili/common/widgets/radio_widget.dart';
+import 'package:GiliGili/http/init.dart';
+import 'package:GiliGili/utils/accounts/account.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/http/login.dart';
+import 'package:GiliGili/http/login.dart';
 import 'package:gt3_flutter_plugin/gt3_flutter_plugin.dart';
-import 'package:PiliPlus/models/login/index.dart';
+import 'package:GiliGili/models/login/index.dart';
 
 class LoginPageController extends GetxController
     with GetSingleTickerProviderStateMixin {

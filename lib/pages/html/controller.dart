@@ -1,15 +1,15 @@
-import 'package:PiliPlus/grpc/app/main/community/reply/v1/reply.pb.dart';
-import 'package:PiliPlus/http/dynamics.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/models/dynamics/result.dart';
-import 'package:PiliPlus/pages/common/reply_controller.dart';
-import 'package:PiliPlus/utils/global_data.dart';
-import 'package:PiliPlus/utils/storage.dart';
-import 'package:PiliPlus/utils/url_utils.dart';
+import 'package:GiliGili/grpc/app/main/community/reply/v1/reply.pb.dart';
+import 'package:GiliGili/http/dynamics.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/models/dynamics/result.dart';
+import 'package:GiliGili/pages/common/reply_controller.dart';
+import 'package:GiliGili/utils/global_data.dart';
+import 'package:GiliGili/utils/storage.dart';
+import 'package:GiliGili/utils/url_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/http/html.dart';
-import 'package:PiliPlus/http/reply.dart';
+import 'package:GiliGili/http/html.dart';
+import 'package:GiliGili/http/reply.dart';
 import 'package:fixnum/fixnum.dart' as $fixnum;
 
 class HtmlRenderController extends ReplyController {

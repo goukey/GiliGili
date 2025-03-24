@@ -1,5 +1,5 @@
 import 'package:audio_session/audio_session.dart';
-import 'package:PiliPlus/plugin/pl_player/index.dart';
+import 'package:GiliGili/plugin/pl_player/index.dart';
 
 class AudioSessionHandler {
   late AudioSession session;

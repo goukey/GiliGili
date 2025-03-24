@@ -1,10 +1,10 @@
-import 'package:PiliPlus/http/fan.dart';
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/models/fans/result.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/utils/extension.dart';
+import 'package:GiliGili/http/fan.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/models/fans/result.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/utils/extension.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/utils/storage.dart';
 
 class FansController extends CommonController {
   int ps = 20;

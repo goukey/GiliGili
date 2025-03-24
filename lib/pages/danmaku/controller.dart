@@ -1,6 +1,6 @@
-import 'package:PiliPlus/grpc/dm/v1/dm.pb.dart';
-import 'package:PiliPlus/http/danmaku.dart';
-import 'package:PiliPlus/plugin/pl_player/controller.dart';
+import 'package:GiliGili/grpc/dm/v1/dm.pb.dart';
+import 'package:GiliGili/http/danmaku.dart';
+import 'package:GiliGili/plugin/pl_player/controller.dart';
 
 class PlDanmakuController {
   PlDanmakuController(

@@ -1,9 +1,9 @@
-import 'package:PiliPlus/http/loading_state.dart';
-import 'package:PiliPlus/http/live.dart';
-import 'package:PiliPlus/models/live/follow.dart';
-import 'package:PiliPlus/pages/common/common_controller.dart';
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/http/loading_state.dart';
+import 'package:GiliGili/http/live.dart';
+import 'package:GiliGili/models/live/follow.dart';
+import 'package:GiliGili/pages/common/common_controller.dart';
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 
 class LiveController extends CommonController {

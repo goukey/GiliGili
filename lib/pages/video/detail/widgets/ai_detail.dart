@@ -1,12 +1,12 @@
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/pages/common/common_collapse_slide_page.dart';
-import 'package:PiliPlus/pages/video/detail/controller.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/pages/common/common_collapse_slide_page.dart';
+import 'package:GiliGili/pages/video/detail/controller.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/models/video/ai.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/models/video/ai.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 class AiDetail extends CommonCollapseSlidePage {
   final ModelResult modelResult;

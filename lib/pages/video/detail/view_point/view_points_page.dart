@@ -1,11 +1,11 @@
-import 'package:PiliPlus/common/constants.dart';
-import 'package:PiliPlus/common/widgets/icon_button.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/common/widgets/segment_progress_bar.dart';
-import 'package:PiliPlus/pages/common/common_collapse_slide_page.dart';
-import 'package:PiliPlus/pages/video/detail/index.dart';
-import 'package:PiliPlus/plugin/pl_player/index.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/constants.dart';
+import 'package:GiliGili/common/widgets/icon_button.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/common/widgets/segment_progress_bar.dart';
+import 'package:GiliGili/pages/common/common_collapse_slide_page.dart';
+import 'package:GiliGili/pages/video/detail/index.dart';
+import 'package:GiliGili/plugin/pl_player/index.dart';
+import 'package:GiliGili/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

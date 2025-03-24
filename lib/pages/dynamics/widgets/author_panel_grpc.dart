@@ -1,13 +1,13 @@
-import 'package:PiliPlus/grpc/app/dynamic/v2/dynamic.pb.dart' as dyn;
-import 'package:PiliPlus/utils/extension.dart';
-import 'package:PiliPlus/utils/storage.dart';
+import 'package:GiliGili/grpc/app/dynamic/v2/dynamic.pb.dart' as dyn;
+import 'package:GiliGili/utils/extension.dart';
+import 'package:GiliGili/utils/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:PiliPlus/common/widgets/network_img_layer.dart';
-import 'package:PiliPlus/http/user.dart';
-import 'package:PiliPlus/utils/feed_back.dart';
-import 'package:PiliPlus/utils/utils.dart';
+import 'package:GiliGili/common/widgets/network_img_layer.dart';
+import 'package:GiliGili/http/user.dart';
+import 'package:GiliGili/utils/feed_back.dart';
+import 'package:GiliGili/utils/utils.dart';
 
 import '../../../http/constants.dart';
 import '../controller.dart';
