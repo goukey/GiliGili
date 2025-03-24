@@ -725,22 +725,34 @@ class EpisodeItem {
 
 // 添加VideoDetailResModel类，用于tv_player_page.dart中的视频详情数据
 class VideoDetailResModel {
-  VideoDetailData? data;
-  
+  final int code;
+  final String message;
+  final VideoDetailData? data;
+
   VideoDetailResModel({
+    required this.code,
+    required this.message,
     this.data,
   });
-  
-  VideoDetailResModel.fromJson(Map<String, dynamic> json) {
-    data = json["data"] == null ? null : VideoDetailData.fromJson(json["data"]);
+
+  // 添加便捷访问器
+  String? get title => data?.title;
+  List<VideoDetailResPart> get pages => data?.pages ?? [];
+
+  factory VideoDetailResModel.fromJson(Map<String, dynamic> json) {
+    return VideoDetailResModel(
+      code: json['code'] ?? 0,
+      message: json['message'] ?? '',
+      data: json['data'] != null ? VideoDetailData.fromJson(json['data']) : null,
+    );
   }
-  
+
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> result = <String, dynamic>{};
-    if (data != null) {
-      result["data"] = data!.toJson();
-    }
-    return result;
+    return {
+      'code': code,
+      'message': message,
+      'data': data?.toJson(),
+    };
   }
 }
 
@@ -750,27 +762,32 @@ class VideoDetailResPart {
   int? page;
   String? part;
   int? duration;
-  
+
   VideoDetailResPart({
     this.cid,
     this.page,
     this.part,
     this.duration,
   });
-  
-  VideoDetailResPart.fromJson(Map<String, dynamic> json) {
-    cid = json["cid"];
-    page = json["page"];
-    part = json["part"];
-    duration = json["duration"];
+
+  // 添加title属性访问器，为了兼容代码
+  String? get title => part;
+
+  factory VideoDetailResPart.fromJson(Map<String, dynamic> json) {
+    return VideoDetailResPart(
+      cid: json['cid'],
+      page: json['page'],
+      part: json['part'],
+      duration: json['duration'],
+    );
   }
-  
+
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> result = <String, dynamic>{};
-    result["cid"] = cid;
-    result["page"] = page;
-    result["part"] = part;
-    result["duration"] = duration;
-    return result;
+    return {
+      'cid': cid,
+      'page': page,
+      'part': part,
+      'duration': duration,
+    };
   }
 }

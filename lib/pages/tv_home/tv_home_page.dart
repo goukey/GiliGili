@@ -224,7 +224,7 @@ class TvHomePage extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'PiliPlus TV',
+                        'GiliGili TV',
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,

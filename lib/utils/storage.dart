@@ -605,6 +605,8 @@ class SettingBoxKey {
       pipNoDanmaku = 'pipNoDanmaku',
       enableAutoLongPressSpeed = 'enableAutoLongPressSpeed',
       subtitlePreference = 'subtitlePreference',
+      defaultQn = 'defaultQn',
+      defaultVolume = 'defaultVolume',
 
       // youtube 双击快进快退
       enableQuickDouble = 'enableQuickDouble',

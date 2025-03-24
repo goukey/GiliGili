@@ -853,7 +853,7 @@ class PlPlayerController {
 
   Set<StreamSubscription> subscriptions = {};
   final Set<Function(Duration position)> _positionListeners = {};
-  final Set<Function(PlayerStatus status)> _statusListeners = {};
+  final List<Function(PlayerStatus)> _statusListeners = [];
 
   /// 播放事件监听
   void startListeners() {
@@ -1427,9 +1427,9 @@ class PlPlayerController {
       _positionListeners.add(listener);
   void removePositionListener(Function(Duration position) listener) =>
       _positionListeners.remove(listener);
-  void addStatusLister(Function(PlayerStatus status) listener) =>
+  void addStatusListener(Function(PlayerStatus) listener) =>
       _statusListeners.add(listener);
-  void removeStatusLister(Function(PlayerStatus status) listener) =>
+  void removeStatusListener(Function(PlayerStatus) listener) =>
       _statusListeners.remove(listener);
 
   /// 截屏
@@ -1648,4 +1648,80 @@ class PlPlayerController {
 
   late final RxList dmTrend = [].obs;
   late final RxBool showDmChart = true.obs;
+
+  // 添加状态监听器
+  void addStatusListener(Function(PlayerStatus) listener) {
+    _statusListeners.add(listener);
+  }
+
+  // 移除状态监听器
+  void removeStatusListener(Function(PlayerStatus) listener) {
+    _statusListeners.remove(listener);
+  }
+
+  // 重置播放器状态
+  void reset() {
+    _videoPlayerController?.stop();
+    _position.value = Duration.zero;
+    positionSeconds.value = 0;
+    _sliderPosition.value = Duration.zero;
+    sliderPositionSeconds.value = 0;
+    _sliderTempPosition.value = Duration.zero;
+    _duration.value = Duration.zero;
+    durationSeconds.value = Duration.zero;
+    _buffered.value = Duration.zero;
+    bufferedSeconds.value = 0;
+    playerStatus.reset();
+  }
+
+  // 设置初始音量
+  void setInitialVolume(double volume) {
+    _currentVolume.value = volume;
+    _videoPlayerController?.setVolume(volume);
+  }
+
+  // 设置是否显示控制栏
+  void setShowControls(bool show) {
+    _showControls.value = show;
+  }
+
+  // 播放视频
+  Future<void> playVideo({
+    required DataSource source,
+    bool autoPlay = true,
+  }) async {
+    dataSource = source;
+    _bvid = source.bvid;
+    _cid = source.cid;
+    _epid = source.epId;
+    _seasonId = source.seasonId;
+    _autoPlay = autoPlay;
+
+    if (_videoPlayerController == null) {
+      _videoPlayerController = Player();
+    }
+
+    try {
+      await _videoPlayerController?.setPlaylistMode(_looping);
+      await _videoPlayerController?.open(Media(source.url));
+      
+      if (autoPlay) {
+        await _videoPlayerController?.play();
+      }
+      
+      // 通知状态变化
+      final status = autoPlay ? PlayerStatus.playing : PlayerStatus.paused;
+      for (var listener in _statusListeners) {
+        listener(status);
+      }
+      
+      return;
+    } catch (e) {
+      // 处理播放错误
+      for (var listener in _statusListeners) {
+        listener(PlayerStatus.error);
+      }
+      return;
+    }
+  }
 }

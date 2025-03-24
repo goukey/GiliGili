@@ -133,7 +133,7 @@ class TvPlayerController extends GetxController {
       final current = parts[currentPartIndex];
       
       // 获取播放URL
-      final UrlNoModel? urlModel = await videoApi.getUrl(_bvid, current.cid);
+      final UrlNoModel? urlModel = await videoApi.getUrl(_bvid, current.cid ?? 0);
       
       if (urlModel != null) {
         // 保存可用清晰度列表
@@ -162,15 +162,15 @@ class TvPlayerController extends GetxController {
         
         // 构建播放数据源
         final dataSource = DataSource(
-          bvid: _bvid,
-          cid: current.cid,
+          type: DataSourceType.network,
+          url: urlModel.accept.first.format,
+          cid: current.cid ?? 0,
           quality: qualityId,
-          videoTitle: videoDetail.value?.title ?? '',
-          title: current.title,
-          url: urlModel.durl.first.url,
-          type: _epid != null ? 'pgc' : 'ugc',
-          epId: _epid,
-          seasonId: _seasonId,
+          videoTitle: videoDetail.value?.data?.title ?? '',
+          title: current.part ?? '',
+          type2: _epid != null ? 'pgc' : 'ugc',
+          epId: _epid?.toString(),
+          seasonId: _seasonId?.toString(),
         );
         
         // 播放视频
