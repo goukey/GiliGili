@@ -20,6 +20,12 @@ class MainController extends GetxController {
   List<Widget> pages = <Widget>[];
   RxList navigationBars = [].obs;
 
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  RxList<String> selectedFirst = <String>[].obs;
+  RxInt pageIndex = 0.obs;
+  List<Widget> pageList = [];
+  RxDouble navBarHeight = 56.0.obs;
+
   final StreamController<bool> bottomBarStream =
       StreamController<bool>.broadcast();
   late bool hideTabBar;
@@ -55,6 +61,10 @@ class MainController extends GetxController {
         defaultValue: DynamicBadgeMode.number.index)];
 
     setNavBarConfig();
+    
+    pageList = pages;
+    pageIndex.value = selectedIndex.value;
+    selectedFirst.value = navigationBars.map<String>((e) => e['name'].toString()).toList();
 
     dynIndex = navigationBars.indexWhere((e) => e['id'] == 1);
     if (dynamicBadgeMode != DynamicBadgeMode.hidden) {
@@ -222,5 +232,37 @@ class MainController extends GetxController {
               _ => throw UnimplementedError(),
             })
         .toList();
+  }
+
+  void onDestinationSelected(int index) {
+    if (index == pageIndex.value) return;
+    pageIndex.value = index;
+    selectedIndex.value = index;
+  }
+
+  void pageScrollUp(int index) {
+    // 实现页面滚动到顶部的逻辑
+  }
+
+  Widget getSelectedIcon(String item) {
+    int index = selectedFirst.indexOf(item);
+    if (index < 0 || index >= navigationBars.length) return const Icon(Icons.home);
+    return Icon(IconData(
+      navigationBars[index]['selectedIcon'],
+      fontFamily: 'MaterialIcons',
+    ));
+  }
+
+  Widget getUnSelectedIcon(String item) {
+    int index = selectedFirst.indexOf(item);
+    if (index < 0 || index >= navigationBars.length) return const Icon(Icons.home);
+    return Icon(IconData(
+      navigationBars[index]['icon'],
+      fontFamily: 'MaterialIcons',
+    ));
+  }
+
+  String getLabel(String item) {
+    return item;
   }
 }

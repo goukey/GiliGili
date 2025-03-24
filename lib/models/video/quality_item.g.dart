@@ -10,14 +10,15 @@ QualityItem _$QualityItemFromJson(Map<String, dynamic> json) => QualityItem(
       id: json['id'] as int,
       quality: json['quality'] as String,
       desc: json['desc'] as String,
-      needVip: json['need_vip'] as bool,
+      needVip: json['needVip'] as bool,
     );
 
-Map<String, dynamic> _$QualityItemToJson(QualityItem instance) => <String, dynamic>{
+Map<String, dynamic> _$QualityItemToJson(QualityItem instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'quality': instance.quality,
       'desc': instance.desc,
-      'need_vip': instance.needVip,
+      'needVip': instance.needVip,
     };
 
 Accept _$AcceptFromJson(Map<String, dynamic> json) => Accept(
@@ -32,4 +33,4 @@ Map<String, dynamic> _$AcceptToJson(Accept instance) => <String, dynamic>{
       'format': instance.format,
       'description': instance.description,
       'codecs': instance.codecs,
-    }; 
+    };

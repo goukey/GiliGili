@@ -1128,3 +1128,86 @@ class VideoHttp {
     }
   }
 }
+
+class VideoApi {
+  Future<VideoDetailResModel?> getDetail(String bvid) async {
+    try {
+      var res = await Request().get(
+        Api.videoDetail,
+        queryParameters: {'bvid': bvid},
+      );
+      if (res.data['code'] == 0) {
+        return VideoDetailResModel.fromJson(res.data);
+      } else {
+        return null;
+      }
+    } catch (e) {
+      log('获取视频详情失败: $e');
+      return null;
+    }
+  }
+
+  Future<UrlNoModel?> getUrl(String bvid, int cid) async {
+    try {
+      Map<String, dynamic> data = {
+        'bvid': bvid,
+        'cid': cid,
+        'qn': 80,
+        'fnval': 4048,
+        'fourk': 1,
+        'voice_balance': 1,
+        'gaia_source': 'pre-load',
+        'web_location': 1550101,
+      };
+
+      Map params = await WbiSign.makSign(data);
+
+      var res = await Request().get(
+        Api.videoUrl,
+        queryParameters: params,
+      );
+
+      if (res.data['code'] == 0) {
+        return UrlNoModel.fromJson(res.data['data']);
+      } else {
+        return null;
+      }
+    } catch (e) {
+      log('获取视频URL失败: $e');
+      return null;
+    }
+  }
+}
+
+// UrlNoModel类定义
+class UrlNoModel {
+  final int quality;
+  final String format;
+  final List<Accept> accept;
+  
+  UrlNoModel({
+    required this.quality,
+    required this.format,
+    required this.accept,
+  });
+  
+  factory UrlNoModel.fromJson(Map<String, dynamic> json) {
+    List<Accept> acceptList = [];
+    if (json['accept_quality'] != null && json['accept_description'] != null) {
+      for (int i = 0; i < json['accept_quality'].length; i++) {
+        acceptList.add(Accept(
+          quality: json['accept_quality'][i],
+          format: json['format'] ?? '',
+          description: json['accept_description'][i] ?? '',
+          codecs: json['codecs'] ?? '',
+        ));
+      }
+    }
+    
+    return UrlNoModel(
+      quality: json['quality'] ?? 0,
+      format: json['format'] ?? '',
+      accept: acceptList,
+    );
+  }
+}
