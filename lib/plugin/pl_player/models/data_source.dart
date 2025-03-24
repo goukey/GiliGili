@@ -27,14 +27,14 @@ class DataSource {
   Map<String, String>? httpHeaders; // for headers
   
   // 添加视频信息相关属性
-  String url;
-  int cid;
-  String title;
-  String videoTitle;
-  String? epId;
-  String? seasonId;
-  String type2; // 'pgc' or 'ugc'
-  int quality;
+  final String url;
+  final int? cid;
+  final String? title;
+  final String? videoTitle;
+  final String? epId;
+  final String? seasonId;
+  final String? type2;
+  final int? quality;
   
   DataSource({
     this.file,
@@ -44,13 +44,13 @@ class DataSource {
     required this.type,
     this.httpHeaders,
     required this.url,
-    required this.cid,
-    required this.title,
-    required this.videoTitle,
+    this.cid,
+    this.title,
+    this.videoTitle,
     this.epId,
     this.seasonId,
-    required this.type2,
-    required this.quality,
+    this.type2,
+    this.quality,
   }) : assert((type == DataSourceType.file && file != null) ||
             videoSource != null || url.isNotEmpty);
 

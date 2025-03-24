@@ -1072,14 +1072,15 @@ class VideoDetailController extends GetxController
   }) async {
     await plPlayerController.setDataSource(
       DataSource(
-        videoSource: video ?? videoUrl,
-        audioSource: audio ?? audioUrl,
+        url: videoUrl ?? '',
         type: DataSourceType.network,
-        httpHeaders: {
-          'user-agent':
-              'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
-          'referer': HttpString.baseUrl
-        },
+        cid: cid,
+        quality: currentVideoQa,
+        videoTitle: data.title,
+        title: data.title,
+        type2: videoType == SearchType.media_bangumi ? subType : null,
+        epId: videoType == SearchType.media_bangumi ? epId : null,
+        seasonId: videoType == SearchType.media_bangumi ? seasonId : null,
       ),
       segmentList: segmentProgressList,
       viewPointList: viewPointList,

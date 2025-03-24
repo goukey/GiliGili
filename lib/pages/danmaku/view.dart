@@ -53,7 +53,7 @@ class _PlDanmakuState extends State<PlDanmaku> {
           playerController.position.value.inMilliseconds);
     }
     playerController
-      ..addStatusLister(playerListener)
+      ..addStatusListener(playerListener)
       ..addPositionListener(videoPositionListen);
     _listenerDanmaku = playerController.isOpenDanmu.listen((p0) {
       if (p0 && !_plDanmakuController.initiated) {
@@ -131,7 +131,7 @@ class _PlDanmakuState extends State<PlDanmaku> {
     _listenerDanmaku?.cancel();
     _listenerFS?.cancel();
     playerController.removePositionListener(videoPositionListen);
-    playerController.removeStatusLister(playerListener);
+    playerController.removeStatusListener(playerListener);
     _plDanmakuController.dispose();
     super.dispose();
   }

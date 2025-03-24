@@ -574,7 +574,7 @@ class Api {
   static const String loginByPwdApi =
       '${HttpString.passBaseUrl}/x/passport-login/oauth2/login';
 
-  /// 密码登录时，提示“本次登录环境存在风险, 需使用手机号进行验证或绑定”
+  /// 密码登录时，提示"本次登录环境存在风险, 需使用手机号进行验证或绑定"
   /// 根据https://ivan.hanloth.cn/archives/530/流程进行手机号验证
   /// tmp_code
   static const String safeCenterGetInfo =
@@ -723,4 +723,9 @@ class Api {
   static const String pgcIndexResult = '/pgc/season/index/result';
 
   static const String noteList = '/x/note/publish/list/archive';
+
+  // 视频相关
+  static const String videoDetail = '$baseUrl/x/web-interface/view';
+  static const String regionList = '$baseUrl/x/web-interface/dynamic/region/v2';
+  static const String regionVideos = '$baseUrl/x/web-interface/dynamic/region';
 }
