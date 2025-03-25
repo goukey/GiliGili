@@ -725,7 +725,7 @@ class Api {
   static const String noteList = '/x/note/publish/list/archive';
 
   // 视频相关
-  static const String videoDetail = '$baseUrl/x/web-interface/view';
-  static const String regionList = '$baseUrl/x/web-interface/dynamic/region/v2';
-  static const String regionVideos = '$baseUrl/x/web-interface/dynamic/region';
+  static const String videoDetail = '${HttpString.baseUrl}/x/web-interface/view';
+  static const String regionList = '${HttpString.baseUrl}/x/web-interface/dynamic/region/v2';
+  static const String regionVideos = '${HttpString.baseUrl}/x/web-interface/dynamic/region';
 }

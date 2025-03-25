@@ -36,6 +36,8 @@ class RegionResponse {
   final int code;
   final String message;
   final RegionData data;
+  
+  List<RegionVideoItem> get archives => data.archives;
 
   RegionResponse({
     required this.code,

@@ -139,12 +139,16 @@ class TvPlayerController extends GetxController {
       
       if (urlModel != null) {
         // 保存可用清晰度列表
-        qualityItems = urlModel.accept.map((item) => QualityItem(
-          id: item.quality,
-          quality: VideoUtils.getQualityMap()[item.quality.toString()] ?? '未知',
-          desc: VideoUtils.getQualityMap()[item.quality.toString()] ?? '未知',
-          needVip: false,
-        )).toList();
+        qualityItems = urlModel.accept.map((item) {
+          // 明确强制转为Accept类型
+          Accept accept = item as Accept;
+          return QualityItem(
+            id: accept.quality,
+            quality: VideoUtils.getQualityMap()[accept.quality.toString()] ?? '未知',
+            desc: VideoUtils.getQualityMap()[accept.quality.toString()] ?? '未知',
+            needVip: false,
+          );
+        }).toList();
         
         // 设置默认清晰度
         int qualityId = GStorage.setting.get(SettingBoxKey.defaultQn, defaultValue: 64);
@@ -200,7 +204,7 @@ class TvPlayerController extends GetxController {
     if (index < 0 || index >= parts.length || index == currentPartIndex) return;
     
     currentPartIndex = index;
-    _cid = parts[index].cid;
+    _cid = parts[index].cid ?? 0;
     _loadPlayUrl();
   }
   

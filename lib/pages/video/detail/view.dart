@@ -206,7 +206,7 @@ class _VideoDetailPageState extends State<VideoDetailPage>
     }
     if (videoDetailController.autoPlay.value) {
       plPlayerController = videoDetailController.plPlayerController;
-      plPlayerController!.addStatusLister(playerListener);
+      plPlayerController!.addStatusListener(playerListener);
       plPlayerController!.addPositionListener(positionListener);
       await plPlayerController!.autoEnterFullscreen();
     }
@@ -316,7 +316,7 @@ class _VideoDetailPageState extends State<VideoDetailPage>
     } else {
       await videoDetailController.playerInit(autoplay: true);
     }
-    plPlayerController!.addStatusLister(playerListener);
+    plPlayerController!.addStatusListener(playerListener);
     plPlayerController!.addPositionListener(positionListener);
     await plPlayerController!.autoEnterFullscreen();
   }
@@ -373,7 +373,7 @@ class _VideoDetailPageState extends State<VideoDetailPage>
     }
     if (plPlayerController != null) {
       videoDetailController.makeHeartBeat();
-      plPlayerController!.removeStatusLister(playerListener);
+      plPlayerController!.removeStatusListener(playerListener);
       plPlayerController!.removePositionListener(positionListener);
       plPlayerController!.dispose();
     } else {
@@ -414,7 +414,7 @@ class _VideoDetailPageState extends State<VideoDetailPage>
       videoDetailController.vttSubtitlesIndex =
           plPlayerController!.vttSubtitlesIndex.value;
       videoDetailController.showVP = plPlayerController!.showVP.value;
-      plPlayerController!.removeStatusLister(playerListener);
+      plPlayerController!.removeStatusListener(playerListener);
       plPlayerController!.removePositionListener(positionListener);
       plPlayerController!.pause();
     }
@@ -494,7 +494,7 @@ class _VideoDetailPageState extends State<VideoDetailPage>
     Future.delayed(const Duration(milliseconds: 600), () {
       AutoOrientation.fullAutoMode();
     });
-    plPlayerController?.addStatusLister(playerListener);
+    plPlayerController?.addStatusListener(playerListener);
     plPlayerController?.addPositionListener(positionListener);
   }
 

@@ -45,14 +45,10 @@ class LiveRoomController extends GetxController {
   playerInit(source) async {
     await plPlayerController.setDataSource(
       DataSource(
-        videoSource: source,
-        audioSource: null,
         type: DataSourceType.network,
-        httpHeaders: {
-          'user-agent':
-              'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_3_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Safari/605.1.15',
-          'referer': HttpString.baseUrl
-        },
+        url: source,
+        videoSource: source,
+        httpHeaders: {'referer': 'https://live.bilibili.com/h5'},
       ),
       // 硬解
       enableHA: true,

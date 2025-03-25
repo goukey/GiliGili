@@ -35,6 +35,7 @@ class DataSource {
   final String? seasonId;
   final String? type2;
   final int? quality;
+  final String? bvid;
   
   DataSource({
     this.file,
@@ -51,6 +52,7 @@ class DataSource {
     this.seasonId,
     this.type2,
     this.quality,
+    this.bvid,
   }) : assert((type == DataSourceType.file && file != null) ||
             videoSource != null || url.isNotEmpty);
 
@@ -69,6 +71,7 @@ class DataSource {
     String? seasonId,
     String? type2,
     int? quality,
+    String? bvid,
   }) {
     return DataSource(
       file: file ?? this.file,
@@ -85,6 +88,7 @@ class DataSource {
       seasonId: seasonId ?? this.seasonId,
       type2: type2 ?? this.type2,
       quality: quality ?? this.quality,
+      bvid: bvid ?? this.bvid,
     );
   }
 }

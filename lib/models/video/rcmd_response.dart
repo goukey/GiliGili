@@ -4,6 +4,9 @@ class RcmdResponse {
   final int code;
   final String message;
   final RcmdData data;
+  
+  // 添加快捷访问item的getter
+  List<RcmdItem> get item => data.items;
 
   RcmdResponse({
     required this.code,
