@@ -19,6 +19,7 @@ class PlayUrlModel {
     // this.highFormat,
     this.lastPlayTime,
     this.lastPlayCid,
+    this.title,
   });
 
   String? from;
@@ -39,6 +40,7 @@ class PlayUrlModel {
   // String? highFormat;
   int? lastPlayTime;
   int? lastPlayCid;
+  String? title;
 
   PlayUrlModel.fromJson(Map<String, dynamic> json) {
     from = json['from'];
@@ -61,6 +63,7 @@ class PlayUrlModel {
         .toList();
     lastPlayTime = json['last_play_time'];
     lastPlayCid = json['last_play_cid'];
+    title = json['title'];
   }
 }
 

@@ -516,7 +516,7 @@ class PlPlayerController {
       dataStatus.status.value = DataStatus.loading;
       // 初始化全屏方向
       _direction.value = direction ?? 'horizontal';
-      _bvid = bvid;
+      _bvid = bvid ?? '';
       _cid = cid ?? 0;
       _epid = epid;
       _seasonId = seasonId;
@@ -1681,7 +1681,7 @@ class PlPlayerController {
     bool autoPlay = true,
   }) async {
     dataSource = source;
-    _bvid = source.bvid;
+    _bvid = source.bvid ?? '';
     _cid = source.cid ?? 0;
     _epid = source.epId;
     _seasonId = source.seasonId;
