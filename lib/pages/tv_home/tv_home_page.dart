@@ -2,6 +2,8 @@ import 'package:GiliGili/http/video.dart';
 import 'package:GiliGili/models/home/rcmd_item.dart';
 import 'package:GiliGili/models/home/rcmd_res.dart';
 import 'package:GiliGili/models/home/region.dart';
+import 'package:GiliGili/models/video/rcmd_response.dart' as video_rcmd;
+import 'package:GiliGili/models/video/region.dart' as video_region;
 import 'package:GiliGili/router/app_pages.dart';
 import 'package:GiliGili/utils/feed_back.dart';
 import 'package:GiliGili/utils/tv_focus_utils.dart';
@@ -52,7 +54,23 @@ class TvHomeController extends GetxController {
       final res = await videoApi.getRcmdFeed();
       
       if (res != null && res.item.isNotEmpty) {
-        videoList.value = res.item;
+        // 将video_rcmd.RcmdItem转为界面使用的RcmdItem
+        videoList.value = res.item.map((videoItem) => RcmdItem(
+          id: int.tryParse(videoItem.bvid) ?? 0,
+          bvid: videoItem.bvid,
+          title: videoItem.title,
+          pic: videoItem.pic,
+          duration: videoItem.duration,
+          owner: Owner(
+            mid: videoItem.owner['mid'],
+            name: videoItem.owner['name'],
+          ),
+          stat: Stat(
+            view: videoItem.stat['view'] ?? 0,
+            danmaku: videoItem.stat['danmaku'] ?? 0,
+          ),
+          rcmdReason: RcmdReason(),
+        )).toList();
         hasMore.value = res.item.length >= 20;
       } else {
         isError.value = true;
@@ -75,7 +93,22 @@ class TvHomeController extends GetxController {
       final res = await videoApi.getRcmdFeed();
       
       if (res != null && res.item.isNotEmpty) {
-        videoList.addAll(res.item);
+        videoList.addAll(res.item.map((videoItem) => RcmdItem(
+          id: int.tryParse(videoItem.bvid) ?? 0,
+          bvid: videoItem.bvid,
+          title: videoItem.title,
+          pic: videoItem.pic,
+          duration: videoItem.duration,
+          owner: Owner(
+            mid: videoItem.owner['mid'],
+            name: videoItem.owner['name'],
+          ),
+          stat: Stat(
+            view: videoItem.stat['view'] ?? 0,
+            danmaku: videoItem.stat['danmaku'] ?? 0,
+          ),
+          rcmdReason: RcmdReason(),
+        )).toList());
         hasMore.value = res.item.length >= 20;
       } else {
         hasMore.value = false;
@@ -94,10 +127,17 @@ class TvHomeController extends GetxController {
       final res = await videoApi.getRegionList();
       
       if (res != null && res.isNotEmpty) {
-        // 添加一个"推荐"分区作为首个选项
+        // 添加一个"推荐"分区作为首个选项，同时将video_region.Region转为界面使用的Region
         regionList.value = [
           Region(tid: 0, name: '推荐', logo: '', goto: '', param: '', uri: ''),
-          ...res
+          ...res.map((videoRegion) => Region(
+            tid: videoRegion.tid,
+            name: videoRegion.name,
+            logo: '',
+            goto: '',
+            param: '',
+            uri: '',
+          )).toList()
         ];
       }
     } catch (e) {
@@ -141,18 +181,18 @@ class TvHomeController extends GetxController {
       if (res != null && res.archives.isNotEmpty) {
         // 转换格式以适配现有列表
         final items = res.archives.map((archive) => RcmdItem(
-          id: archive.aid,
+          id: 0, // video_region.RegionVideoItem没有aid属性
           bvid: archive.bvid,
           title: archive.title,
           pic: archive.pic,
           duration: archive.duration,
           owner: Owner(
-            mid: archive.owner.mid,
-            name: archive.owner.name,
+            mid: archive.owner['mid'],
+            name: archive.owner['name'],
           ),
           stat: Stat(
-            view: archive.stat.view,
-            danmaku: archive.stat.danmaku,
+            view: archive.stat['view'] ?? 0,
+            danmaku: archive.stat['danmaku'] ?? 0,
           ),
           rcmdReason: RcmdReason(),
         )).toList();
