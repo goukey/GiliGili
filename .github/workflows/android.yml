@@ -72,27 +72,25 @@ jobs:
             echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> android/key.properties
           fi
 
-      - name: flutter build apk
+      - name: Build the APK
         run: |
           chmod +x lib/scripts/build.sh
           lib/scripts/build.sh
-          
+
       - name: 检查构建的APK文件
         run: |
-          echo "查找构建的APK文件:"
-          find build -name "*.apk" -type f || echo "未找到任何APK文件"
+          echo "查找APK文件..."
+          find build -name "*.apk" -type f
           
           if [ -f "build/app/outputs/flutter-apk/app-release.apk" ]; then
-            echo "找到APK文件，大小:"
-            ls -lh build/app/outputs/flutter-apk/app-release.apk
+            echo "APK文件存在: $(du -h build/app/outputs/flutter-apk/app-release.apk | cut -f1)"
           else
-            echo "错误: 未找到APK文件!"
+            echo "错误: APK文件未生成!"
             exit 1
           fi
 
-      - name: 上传
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-armeabi-v7a
-          path: |
-            build/app/outputs/flutter-apk/app-release.apk
+          name: release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk

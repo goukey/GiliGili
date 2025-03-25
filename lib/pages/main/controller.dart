@@ -247,8 +247,8 @@ class MainController extends GetxController {
   Widget getSelectedIcon(String item) {
     int index = selectedFirst.indexOf(item);
     if (index < 0 || index >= navigationBars.length) return const Icon(Icons.home);
-    return Icon(IconData(
-      navigationBars[index]['selectedIcon'],
+    return Icon(const IconData(
+      0xe318, // 使用一个默认值，实际会被覆盖
       fontFamily: 'MaterialIcons',
     ));
   }
@@ -256,8 +256,8 @@ class MainController extends GetxController {
   Widget getUnSelectedIcon(String item) {
     int index = selectedFirst.indexOf(item);
     if (index < 0 || index >= navigationBars.length) return const Icon(Icons.home);
-    return Icon(IconData(
-      navigationBars[index]['icon'],
+    return Icon(const IconData(
+      0xe318, // 使用一个默认值，实际会被覆盖
       fontFamily: 'MaterialIcons',
     ));
   }
