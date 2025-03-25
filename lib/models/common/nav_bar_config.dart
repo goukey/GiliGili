@@ -1,43 +1,25 @@
 import 'package:flutter/material.dart';
 
-List get defaultNavigationBars => [
+final defaultNavigationBars = [
       {
         'id': 0,
-        'icon': const Icon(
-          Icons.home_outlined,
-          size: 23,
-        ),
-        'selectIcon': const Icon(
-          Icons.home,
-          size: 23,
-        ),
-        'label': "首页",
+        'icon': Icons.home_outlined.codePoint,
+        'selectedIcon': Icons.home.codePoint,
+        'name': "首页",
         'count': 0,
       },
       {
         'id': 1,
-        'icon': const Icon(
-          Icons.motion_photos_on_outlined,
-          size: 21,
-        ),
-        'selectIcon': const Icon(
-          Icons.motion_photos_on,
-          size: 21,
-        ),
-        'label': "动态",
+        'icon': Icons.motion_photos_on_outlined.codePoint,
+        'selectedIcon': Icons.motion_photos_on.codePoint,
+        'name': "动态",
         'count': 0,
       },
       {
         'id': 2,
-        'icon': const Icon(
-          Icons.video_collection_outlined,
-          size: 21,
-        ),
-        'selectIcon': const Icon(
-          Icons.video_collection,
-          size: 21,
-        ),
-        'label': "媒体库",
+        'icon': Icons.video_collection_outlined.codePoint,
+        'selectedIcon': Icons.video_collection.codePoint,
+        'name': "媒体库",
         'count': 0,
       }
     ];

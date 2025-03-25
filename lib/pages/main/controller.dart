@@ -247,19 +247,37 @@ class MainController extends GetxController {
   Widget getSelectedIcon(String item) {
     int index = selectedFirst.indexOf(item);
     if (index < 0 || index >= navigationBars.length) return const Icon(Icons.home);
-    return Icon(const IconData(
-      0xe318, // 使用一个默认值，实际会被覆盖
-      fontFamily: 'MaterialIcons',
-    ));
+    
+    // 根据ID返回固定图标
+    int id = navigationBars[index]['id'] as int;
+    switch (id) {
+      case 0:
+        return const Icon(Icons.home);
+      case 1:
+        return const Icon(Icons.motion_photos_on);
+      case 2:
+        return const Icon(Icons.video_collection);
+      default:
+        return const Icon(Icons.home);
+    }
   }
 
   Widget getUnSelectedIcon(String item) {
     int index = selectedFirst.indexOf(item);
-    if (index < 0 || index >= navigationBars.length) return const Icon(Icons.home);
-    return Icon(const IconData(
-      0xe318, // 使用一个默认值，实际会被覆盖
-      fontFamily: 'MaterialIcons',
-    ));
+    if (index < 0 || index >= navigationBars.length) return const Icon(Icons.home_outlined);
+    
+    // 根据ID返回固定图标
+    int id = navigationBars[index]['id'] as int;
+    switch (id) {
+      case 0:
+        return const Icon(Icons.home_outlined);
+      case 1:
+        return const Icon(Icons.motion_photos_on_outlined);
+      case 2:
+        return const Icon(Icons.video_collection_outlined);
+      default:
+        return const Icon(Icons.home_outlined);
+    }
   }
 
   String getLabel(String item) {
