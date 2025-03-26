@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class BuildConfig {
-  static const bool isDebug = bool.fromEnvironment('dart.vm.product').not;
+  static bool get isDebug => kDebugMode;
 } 
