@@ -253,8 +253,11 @@ class _ColorSelectPageState extends State<ColorSelectPage> {
                 destinations: defaultNavigationBars
                     .map(
                       (item) => NavigationDestination(
-                        icon: item['icon'],
-                        label: item['label'],
+                        icon: Icon(IconData(
+                          item['icon'] as int,
+                          fontFamily: 'MaterialIcons',
+                        )),
+                        label: item['name'] as String,
                       ),
                     )
                     .toList(),
